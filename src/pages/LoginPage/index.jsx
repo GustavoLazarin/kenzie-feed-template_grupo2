@@ -2,17 +2,9 @@ import { Footer } from "../../components/Footer";
 import { Header } from "../../components/header";
 import loginImg from "../../assets/loginImg.svg";
 import { Link } from "react-router-dom";
-// import { useUserContext } from "../../providers/UserContext";
 import { LoginForm } from "../../components/forms/LoginForm";
 
 export const LoginPage = () => {
-
-//   const {loginRequest} = useUserContext();
-
-//   const submit = (formData) => {
-//     loginRequest(formData);
-//   };
-
   return (
     <div>
       <Header />
@@ -30,9 +22,7 @@ export const LoginPage = () => {
 
           <div>
             <h3>Não é cadastrado?</h3>
-            <Link to="/register">
-              <button>Cadastre-se</button>
-            </Link>
+            <Link to="/register">Cadastre-se</Link>
           </div>
         </div>
       </section>
