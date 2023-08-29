@@ -30,7 +30,7 @@ export const UserProvider = ({ children }) => {
             const { data } = await api.post('/login', formData);
             setUser(data.user);
             localStorage.setItem('@TOKEN', data.accessToken);
-            localStorage.setItem('@ID', data.user.id);
+            // localStorage.setItem('@ID', data.user.id);
             navigate('/dashboard');
             toast.success('Login feito com sucesso, você será redirecionado(a) para a dashboard')
         } catch (error) {
@@ -41,8 +41,14 @@ export const UserProvider = ({ children }) => {
         }
     }
 
+    const logOut = () => {
+        setUser(null);
+        localStorage.removeItem("@TOKEN");
+        navigate("/");
+    }
+
     return(
-    <UserContext.Provider value={{loginRequest, registerRequest, user}}>
+    <UserContext.Provider value={{registerRequest, loginRequest, logOut, user}}>
         {children}
     </UserContext.Provider>
     )
