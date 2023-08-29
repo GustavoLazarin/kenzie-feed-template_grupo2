@@ -1,10 +1,8 @@
-import { forwardRef } from "react";
-
-export const TextArea = forwardRef((type, id, rest), ref => {
+export const TextArea = ({label, id, ...rest}) => {
   return (
     <div>
-      {label && <label htmlFor={id}>{label}</label>}
-      <textarea ref={ref} type={type} id={id} {...rest}/>
+      {label ? <label htmlFor={id}>{label}</label> : null}
+      <textarea id={id} {...rest}/>
     </div>
   );
-});
+};
