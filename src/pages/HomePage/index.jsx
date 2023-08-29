@@ -1,8 +1,9 @@
 import { Footer } from "../../components/Footer"
 import { Header } from "../../components/header"
 
-export const RegisterPage = () => {
-    return (
+
+export const HomePage = ()=>{
+    return(
         <div>
             <Header/>
             <section>
