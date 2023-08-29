@@ -1,10 +1,13 @@
-import { RegisterForm } from "./components/forms/RegisterForm"
+import { RoutesMain } from "./Routes/RoutesMain"
+import { ToastContainer } from 'react-toastify';
 
 function App() {
 
   return (
     <div className="App">
-      <RegisterForm/>
+      <RoutesMain/>
+
+      <ToastContainer position='top-bottom' theme='dark' autoClose={2 * 1000} />
     </div>
   )
 }
