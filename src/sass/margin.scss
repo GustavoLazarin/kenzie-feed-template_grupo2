@@ -1,0 +1,19 @@
+  
+  @mixin margin-inline($m: var(--s0)) {
+    margin-inline: $m;
+  }
+  @mixin margin-block($m: var(--s0)) {
+    margin-block: $m;
+  }
+  @mixin margin-block-start($m: var(--s0)) {
+    margin-block-start: $m;
+  }
+  @mixin margin-block-end($m: var(--s0)) {
+    margin-block-end: $m;
+  }
+  @mixin margin($m: var(--s0)) {
+    margin: $m;
+  }
+  @mixin margin-left($m: var(--s0)) {
+    margin-inline-start: $m;
+  }

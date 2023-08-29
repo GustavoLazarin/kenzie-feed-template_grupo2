@@ -1,31 +1,16 @@
 @mixin padding-inline($p: var(--s0)) {
-    padding-inline: $p;
-  }
-  @mixin padding-block($p: var(--s0)) {
-    padding-block: $p;
-  }
-  @mixin padding($p: var(--s0)) {
-    padding: $p;
-  }
-  @mixin margin-inline($m: var(--s0)) {
-    margin-inline: $m;
-  }
-  @mixin margin-block($m: var(--s0)) {
-    margin-block: $m;
-  }
-  @mixin margin-block-end($m: var(--s0)) {
-    margin-block-end: $m;
-  }
-  @mixin margin($m: var(--s0)) {
-    margin: $m;
-  }
-  @mixin margin-left($m: var(--s0)) {
-    margin-inline-start: $m;
-  }
-  
-  .padding-i-0 {
-    padding-inline: 0;
-  }
-  .padding-b-0 {
-    padding-block: 0;
-  }
+  padding-inline: $p;
+}
+@mixin padding-block($p: var(--s0)) {
+  padding-block: $p;
+}
+@mixin padding($p: var(--s0)) {
+  padding: $p;
+}
+
+.padding-i-0 {
+  padding-inline: 0;
+}
+.padding-b-0 {
+  padding-block: 0;
+}

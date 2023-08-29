@@ -1,0 +1,19 @@
+[class^="stack"] > * {
+    /* top and bottom margins in horizontal-tb writing mode */
+    margin-block: 0;
+  }
+  .stack-x-large > * + * {
+    margin-block-start: var(--s2);
+  }
+  .stack-large> * + * {
+    margin-block-start: var(--s1);
+  }
+  .stack-medium > * + * {
+    margin-block-start: var(--s0);
+  }
+  .stack-normal > * + * {
+    margin-block-start: var(--s-1);
+  }
+  .stack-small > * + * {
+    margin-block-start: var(--s-3);
+  }

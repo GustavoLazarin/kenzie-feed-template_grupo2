@@ -1,10 +1,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lora:wght@400;700&display=swap");
 
 :root {
+
+  --ratio: 1.5;
+  --s-5: calc(var(--s-4) / var(--ratio));
+  --s-4: calc(var(--s-3) / var(--ratio));
+  --s-3: calc(var(--s-2) / var(--ratio));
+  --s-2: calc(var(--s-1) / var(--ratio));
+  --s-1: calc(var(--s0) / var(--ratio));
+  --s0: 1rem;
+  --s1: calc(var(--s0) * var(--ratio));
+  --s2: calc(var(--s1) * var(--ratio));
+  --s3: calc(var(--s2) * var(--ratio));
+  --s4: calc(var(--s3) * var(--ratio));
+  --s5: calc(var(--s4) * var(--ratio));
+
+  // tamanho máximo para quebrar linha
+  --measure: 60ch;
+
   --color-black: #000000;
   --color-white: #ffffff;
   --color-grey: #f3f3f3;
+  --color-grey-hover: #9f9f9f;
   --color-blue: #55a3ff;
+  --color-blue-hover: #357bca;
 
   // Tipos de tipografia
   --font-serif: "Lora", serif;
@@ -32,4 +51,8 @@
 
   --regular: 400;
   --bold: 700;
+
+  --small-radius: 0.25rem;
+
+  --large-radius: 1.5rem;
 }
