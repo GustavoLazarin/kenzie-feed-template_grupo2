@@ -10,6 +10,7 @@ export const LoginPage = () => {
   const {loginRequest} = useUserContext();
 
   const submit = (formData) => {
+    console.log(formData)
     loginRequest(formData);
   };
 

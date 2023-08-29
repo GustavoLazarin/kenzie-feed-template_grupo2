@@ -20,6 +20,7 @@ export const UserProvider = ({ children }) => {
             navigate('/dashboard');
             toast.success('Login feito com sucesso, você será redirecionado(a) para a dashboard')
         } catch (error) {
+            console.log("error")
             if (error.response.status >= 400) {
                 toast.error('E-mail ou senha incorretos.')
             }

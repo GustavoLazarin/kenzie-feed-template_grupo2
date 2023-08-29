@@ -1,8 +1,12 @@
 import { useForm } from "react-hook-form";
 import { LoginSchema } from "./LoginSchema";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Input } from "../inputs/Input";
+import { InputPassword } from "../inputs/InputPassword";
 
 export const LoginForm = (submit) => {
-    const {register,
+    const {
+        register,
         handleSubmit,
         formState: { errors },
     } = useForm({
@@ -14,7 +18,7 @@ export const LoginForm = (submit) => {
       <form onSubmit={handleSubmit(submit)}>
         <Input
           placeholder={"E-mail"}
-          type={email}
+          type={"email"}
           id={"email"}
           {...register("email")}
         />
