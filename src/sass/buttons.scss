@@ -1,0 +1,68 @@
+//  botão azulzinho
+@import "./padding.scss";
+
+
+@mixin transition($i: var(--color-blue), $f: var(--color-blue-hover)) {
+  transition: background-color 300ms;
+  background-color: $i;
+
+  
+  &:hover {
+    background-color: $f;
+  }
+}
+
+button {
+  font-weight: var(--bold);
+
+  border-radius: var(--small-radius);
+
+  color: var(--color-black);
+}
+
+// Tamanho de btn
+.btn__small {
+  @include padding-inline($p: 1rem);
+  @include padding-block($p: 0.8rem);
+
+  font-size: var(--small-paragraph);
+}
+
+.btn__medium {
+  @include padding-inline($p: 1.55rem);
+  @include padding-block($p: 1.25rem);
+
+  font-size: var(--small-paragraph);
+}
+
+.btn__large {
+  @include padding-inline($p: 2.75rem);
+  @include padding-block($p: 1.375rem);
+
+  font-size: var(--paragraph);
+}
+
+// Tipo de btn
+.btn__primary {
+  @include transition;
+  color: var(--color-white);
+}
+
+//  botão branco (dashboard | voltar)
+.btn__secondary {
+    @include transition($i:var(--color-white), $f:var(--color-grey));
+    
+    
+}
+
+//  cadastre-se | leia mais (pode ser um button ou um link)
+.btn__tertiary {
+    background-color: var(--color-white);
+
+    font-weight: var(--regular);
+    text-decoration: underline;
+    
+    
+    @include transition($i:var(--color-white), $f:var(--color-grey));
+    
+}
