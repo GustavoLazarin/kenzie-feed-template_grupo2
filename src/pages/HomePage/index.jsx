@@ -18,7 +18,7 @@ export const HomePage = () => {
 				<section>
 					<div>
 						<h2>Últimas notícias</h2>
-						<Link>Ver tudo</Link>
+						<Link to={'/news'}>Ver tudo</Link>
 					</div>
 					<NewsList />
 				</section>
