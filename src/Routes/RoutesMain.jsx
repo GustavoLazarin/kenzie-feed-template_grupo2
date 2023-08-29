@@ -1,13 +1,13 @@
-import { Route, Routes } from 'react-router-dom';
-import { HomePage } from '../pages/HomePage';
-import { AllNewsPage } from '../pages/AllNewsPage';
-import { SinglePage } from '../pages/SinglePage';
-import { LoginPage } from '../pages/LoginPage';
-import { RegisterPage } from '../pages/RegisterPage';
-import { DashboardPage } from '../pages/DashboardPage';
-import { EditPostPage } from '../pages/EditPostPage';
-import { PrivateRoutes } from './PrivateRoutes';
-import { PublicRoutes } from './PublicRoutes';
+import { Route, Routes } from "react-router-dom";
+import { HomePage } from "../pages/HomePage";
+import { AllNewsPage } from "../pages/AllNewsPage";
+import { SinglePage } from "../pages/SinglePage";
+import { LoginPage } from "../pages/LoginPage";
+import { RegisterPage } from "../pages/RegisterPage";
+import { DashboardPage } from "../pages/DashboardPage";
+import { EditPostPage } from "../pages/EditPostPage";
+import { PrivateRoutes } from "./PrivateRoutes";
+import { PublicRoutes } from "./PublicRoutes";
 
 export const RoutesMain = () => {
 	return (
