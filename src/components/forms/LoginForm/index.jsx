@@ -24,19 +24,19 @@ export const LoginForm = () => {
     <div>
       <form onSubmit={handleSubmit(submit)}>
         <Input
-          placeholder={"E-mail"}
+          placeholder="E-mail"
           type={"email"}
           id={"email"}
+          error={errors.email}
           {...register("email")}
         />
-        <span>{errors.email?.message}</span>
 
         <InputPassword
-          placeholder={"Senha"}
+          placeholder="Senha"
           id={"password"}
+          error={errors.password}
           {...register("password")}
         />
-        <span>{errors.password?.message}</span>
 
         <button type="submit">Entrar</button>
       </form>

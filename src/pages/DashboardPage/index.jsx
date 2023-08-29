@@ -6,7 +6,7 @@ export const DashboardPage = () => {
     <div>
       <Header/>
       <section>
-
+        <h2>Dashboard!</h2>
       </section>
       <Footer/>
 
