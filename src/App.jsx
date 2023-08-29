@@ -1,10 +1,12 @@
-import { RegisterPage } from "./pages/RegisterPage"
+import { RoutesMain } from "./Routes/RoutesMain"
+import { ToastContainer } from 'react-toastify';
 
 function App() {
 
   return (
     <div className="App">
-      <RegisterPage/>
+      <RoutesMain/>
+      <ToastContainer position='top-bottom' theme='dark' autoClose={2 * 1000} />
     </div>
   )
 }
