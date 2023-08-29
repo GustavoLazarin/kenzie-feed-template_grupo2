@@ -2,17 +2,16 @@ import { Footer } from "../../components/Footer";
 import { Header } from "../../components/header";
 import loginImg from "../../assets/loginImg.svg";
 import { Link } from "react-router-dom";
-import { useUserContext } from "../../providers/UserContext";
+// import { useUserContext } from "../../providers/UserContext";
 import { LoginForm } from "../../components/forms/LoginForm";
 
 export const LoginPage = () => {
 
-  const {loginRequest} = useUserContext();
+//   const {loginRequest} = useUserContext();
 
-  const submit = (formData) => {
-    console.log(formData)
-    loginRequest(formData);
-  };
+//   const submit = (formData) => {
+//     loginRequest(formData);
+//   };
 
   return (
     <div>
@@ -27,7 +26,7 @@ export const LoginPage = () => {
             <p>Preencha os campos corretamente para fazer login</p>
           </div>
             
-            <LoginForm submit={submit}/>
+            <LoginForm />
 
           <div>
             <h3>Não é cadastrado?</h3>

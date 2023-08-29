@@ -3,15 +3,22 @@ import { LoginSchema } from "./LoginSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "../inputs/Input";
 import { InputPassword } from "../inputs/InputPassword";
+import { useUserContext} from "../../../providers/UserContext"
 
-export const LoginForm = (submit) => {
-    const {
-        register,
-        handleSubmit,
-        formState: { errors },
-    } = useForm({
-        resolver: zodResolver(LoginSchema),
-    })
+export const LoginForm = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: zodResolver(LoginSchema),
+  });
+
+  const { loginRequest } = useUserContext();
+
+  const submit = (formData) => {
+    loginRequest(formData);
+  };
 
   return (
     <div>
