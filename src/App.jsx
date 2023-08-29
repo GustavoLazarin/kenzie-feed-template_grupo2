@@ -6,7 +6,6 @@ function App() {
   return (
     <div className="App">
       <RoutesMain/>
-
       <ToastContainer position='top-bottom' theme='dark' autoClose={2 * 1000} />
     </div>
   )

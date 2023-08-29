@@ -1,10 +1,11 @@
 import { forwardRef } from "react";
 
-export const Input = forwardRef(({ placeholder, label, type, id, ...rest}, ref) => {
+export const Input = forwardRef(({label, type, id, error, ...rest}, ref) => {
   return (
     <div>
       {label ? <label htmlFor={id}>{label}</label>: null}
-      <input placeholder={placeholder} type={type} id={id} {...rest} ref={ref}/>
+      <input ref={ref} type={type} id={id} {...rest}/>
+      {error ? <span>{error.message}</span> : null}
     </div>
   );
 });
