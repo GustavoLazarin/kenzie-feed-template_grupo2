@@ -1,7 +1,5 @@
+import { NewsCard } from './NewsCard';
+
 export const NewsList = () => {
-    return (
-        <div>
-            
-        </div>
-    )
+	return <ul></ul>;
 };
