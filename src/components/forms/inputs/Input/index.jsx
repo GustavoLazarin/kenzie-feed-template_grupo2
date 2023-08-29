@@ -1,8 +1,8 @@
-export const Input = ({label, type, id, ...rest}) => {
+export const Input = ({ placeholder, label, type, id, ...rest}) => {
   return (
     <div>
       {label ? <label htmlFor={id}>{label}</label>: null}
-      <input type={type} id={id} {...rest}/>
+      <input placeholder={placeholder} type={type} id={id} {...rest}/>
     </div>
   );
 };

@@ -1,8 +1,8 @@
-export const InputPassword = ({label, id, ...rest}) => {
+export const InputPassword = ({ placeholder, label, id, ...rest}) => {
   return (
     <div>
       {label ? <label htmlFor={id}>{label}</label> : null}
-      <input type="password" id={id} {...rest}/>
+      <input placeholder={placeholder} type="password" id={id} {...rest}/>
     </div>
   );
 };

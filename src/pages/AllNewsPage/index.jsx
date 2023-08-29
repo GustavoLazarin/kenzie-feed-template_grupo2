@@ -6,7 +6,7 @@ export const AllNewsPage = () => {
         <div>
             <Header/>
             <section>
-
+                
             </section>
             <Footer/>
         </div>
