@@ -1,0 +1,46 @@
+@import "./grid.scss";
+@import "./flex.scss";
+@import "./position.scss";
+@import "./padding.scss";
+@import "./container.scss";
+
+
+
+.modal {
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  @extend .fixed;
+  @extend .grid;
+  @extend .justify-items-center;
+  @extend .align-items-center;
+}
+
+.dialog__overlay {
+    @extend .modal;
+  
+    .dialog__container {
+      width: 90dvw;
+      max-width: 25rem;
+  
+      border-radius: var(--large-radius);
+      @extend .grid;
+
+      & > * {
+        margin-block-end: 0;
+        padding-inline: var(--s1);
+      }
+      
+    //   nome do Modal e o "X" pra sair
+      .container__top {
+        border-start-end-radius: .5rem;
+        border-start-start-radius: .5rem;
+
+        @include padding($p:var(--s1));
+        @extend .flex;
+        @extend .space-between;
+        @include padding-block($p:var(--s1));
+      }
+  
+  
+    }
+  }

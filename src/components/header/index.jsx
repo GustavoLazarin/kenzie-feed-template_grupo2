@@ -9,7 +9,7 @@ export const Header = () => {
   return (
     <header>
       
-      <div>
+      <div className="header">
         <img src="#" alt="KZ-logo" />
         {token ? (
           <div>

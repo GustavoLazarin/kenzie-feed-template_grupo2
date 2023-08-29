@@ -1,0 +1,18 @@
+@import "./grid.scss";
+@import "./flex.scss";
+@import "./position.scss";
+
+@import "./padding.scss";
+@import "./margin.scss";
+
+.header {
+  @extend .flex;
+  @extend .space-between;
+
+  @include margin-block($m: var(--s2));
+
+  .header__user {
+    @extend .flex;
+    @include gap($g: 1rem);
+  }
+}
