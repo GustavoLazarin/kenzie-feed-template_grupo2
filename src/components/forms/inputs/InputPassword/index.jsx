@@ -1,8 +1,11 @@
-export const InputPassword = ({label, id, ...rest}) => {
+import { forwardRef } from "react";
+
+export const InputPassword = forwardRef(({label, id, error, ...rest}, ref) => {
   return (
     <div>
       {label ? <label htmlFor={id}>{label}</label> : null}
-      <input type="password" id={id} {...rest}/>
+      <input ref={ref} type="password" id={id} {...rest}/>
+      {error ? <span>{error.message}</span> : null}
     </div>
   );
-};
+});

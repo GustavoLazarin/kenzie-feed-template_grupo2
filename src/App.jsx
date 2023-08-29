@@ -1,10 +1,10 @@
-import { RegisterForm } from "./components/forms/RegisterForm"
+import { RegisterPage } from "./pages/RegisterPage"
 
 function App() {
 
   return (
     <div className="App">
-      <RegisterForm/>
+      <RegisterPage/>
     </div>
   )
 }
