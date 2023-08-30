@@ -49,8 +49,26 @@ export const NewsProvider = ({ children }) => {
         }
     }
 
+    //função request de delete
+    const deletePost = async (id)=>{
+        const token = localStorage.getItem("@TOKEN")
+        try {
+            await api.delete(`/posts/${id}`, {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            });
+            const newPostList = ownPosts.filter(post=> post.id !==id);
+            setOwnPosts(newPostList);
+            toast.success("Post deletado com sucesso.");
+        } catch (error) {
+            console.log(error);
+            toast.error("Exclusão não foi possível, tente novamente mais tarde");
+        }
+    }
+
     return (
-    <NewsContext.Provider value={{ownPosts, getOwnPosts, editPost, editingPost, setEditingPost}}>
+    <NewsContext.Provider value={{ownPosts, getOwnPosts, editPost, editingPost, setEditingPost, deletePost}}>
         {children}
     </NewsContext.Provider>
     )

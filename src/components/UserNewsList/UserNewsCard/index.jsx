@@ -4,7 +4,7 @@ import { useNewsContext } from "../../../providers/NewsContext"
 
 export const UserNewsCard = ({post}) => {
     const navigate = useNavigate()
-    const { setEditingPost} = useNewsContext();
+    const { setEditingPost, deletePost} = useNewsContext();
 
     const editBttn = (post)=>{
         setEditingPost(post);
@@ -19,7 +19,7 @@ export const UserNewsCard = ({post}) => {
             </div>
             <div>
                 <button onClick={()=>editBttn(post)}><MdOutlineEdit/></button>
-                <button ><MdDeleteOutline/></button>
+                <button onClick={()=>deletePost(post.id)} ><MdDeleteOutline/></button>
             </div>
         </li>
     )
