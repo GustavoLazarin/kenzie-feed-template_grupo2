@@ -22,7 +22,7 @@ export const LoginForm = () => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit(submit)}>
+      <form className="stack-large" onSubmit={handleSubmit(submit)}>
         <Input
           placeholder="E-mail"
           type={"email"}
@@ -38,7 +38,7 @@ export const LoginForm = () => {
           {...register("password")}
         />
 
-        <button type="submit">Entrar</button>
+        <button className="btn__primary btn btn__small" type="submit">Entrar</button>
       </form>
     </div>
   );
