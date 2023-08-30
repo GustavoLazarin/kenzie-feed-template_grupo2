@@ -11,8 +11,8 @@ export const useUserContext = () => {
 
 export const UserProvider = ({ children }) => {
 
-    const [user, setUser] = useState(null);
     const navigate = useNavigate();
+
 
     const registerRequest = async (formData, reset) => {
         try {
@@ -28,9 +28,8 @@ export const UserProvider = ({ children }) => {
     const loginRequest = async (formData) => {
         try {
             const { data } = await api.post('/login', formData);
-            setUser(data.user);
-            localStorage.setItem('@TOKEN', data.accessToken);
-            // localStorage.setItem('@ID', data.user.id);
+            localStorage.setItem("@TOKEN", data.accessToken);
+            localStorage.setItem("@USER", JSON.stringify(data.user));
             navigate('/dashboard');
             toast.success('Login feito com sucesso, você será redirecionado(a) para a dashboard')
         } catch (error) {
@@ -42,13 +41,13 @@ export const UserProvider = ({ children }) => {
     }
 
     const logOut = () => {
-        setUser(null);
         localStorage.removeItem("@TOKEN");
+        localStorage.removeItem("@USER");
         navigate("/");
     }
 
     return(
-    <UserContext.Provider value={{registerRequest, loginRequest, logOut, user}}>
+    <UserContext.Provider value={{registerRequest, loginRequest, logOut}}>
         {children}
     </UserContext.Provider>
     )

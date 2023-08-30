@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { Footer } from "../../components/Footer";
+
 import { NewsList } from "../../components/NewsList";
-import { Header } from "../../components/header";
 import { useParams } from "react-router-dom";
 import { api } from "../../services/api";
 import { RxHeart } from "react-icons/rx";
 import { useNewsContext } from "../../providers/NewsContext";
+import { Header } from "../../components/Header";
+
 
 export const SinglePage = () => {
 	const { id } = useParams();

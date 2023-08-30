@@ -10,13 +10,19 @@
 
 
 footer {
-    @include margin-block($m: var(--s3));
-    @extend .flex;
-    @extend .justify-items-center;
-    @extend .text-align-center;
-    
-    &>* {
-      @extend .min-w-full;
+  @extend .flex;
+  @extend .justify-items-center;
+  @extend .text-align-center;
+  
+  &>* {
+    @include margin-block($m: var(--s4));
+    @extend .min-w-full;
+    font-size: var(--small-paragraph);
+      
+      @media (min-width: 400px){
+        font-size: var(--paragraph);
+
+      }
     }
 
   }

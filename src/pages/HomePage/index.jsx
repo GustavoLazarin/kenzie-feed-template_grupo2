@@ -1,9 +1,11 @@
+
 import { Footer } from "../../components/Footer";
-import { Header } from "../../components/header";
 import homeImg from "../../assets/homeImg.svg";
 import { Link } from "react-router-dom";
 import { NewsList } from "../../components/NewsList";
 import { useNewsContext } from "../../providers/NewsContext";
+import { Header } from '../../components/Header';
+import homeImg from '../../assets/homeImg.svg';
 
 export const HomePage = () => {
 	const { posts } = useNewsContext();

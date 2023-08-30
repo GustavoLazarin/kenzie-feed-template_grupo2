@@ -1,10 +1,10 @@
 import { Footer } from "../Footer";
-import { LogOutHeader } from "../headers/LogOutHeader";
+import { Header } from "../Header";
 
 export const DefaultTemplate = () => {
   return (
     <>
-      <LogOutHeader />
+      <Header />
       <main></main>
       <Footer />
     </>
