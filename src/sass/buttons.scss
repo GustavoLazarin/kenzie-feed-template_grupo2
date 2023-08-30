@@ -1,6 +1,7 @@
 //  botão azulzinho
 @import "./padding.scss";
 @import "./sizing.scss";
+@import "./flex.scss";
 
 
 @mixin transition($i: var(--color-blue), $f: var(--color-blue-hover)) {
@@ -13,19 +14,21 @@
   }
 }
 
-a, button {
-  @extend .w-full;
+a {
+  @extend .text-align-center;
   max-width: var(--input-max-width);
-
 }
 
-button {
+.btn {
+  @extend .w-full;
+  max-width: var(--input-max-width);
   
   font-weight: var(--bold);
-
+  
   border-radius: var(--small-radius);
-
+  
   color: var(--color-black);
+
 }
 
 // Tamanho de btn

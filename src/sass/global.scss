@@ -7,12 +7,37 @@
 @import "./stack.scss";
 @import "./margin.scss";
 
+.everything {
+  @extend .justify-items-center;
+  @extend .grid-page;
+
+
+  height: 100dvh;
+}
+
 .content,
 header,
 footer {
   @include padding-inline($p: 1rem);
+  max-width: 1050px;
+  @extend .w-full;
 }
 
 .content {
+
+  @extend .grid;
+  @extend .align-items-center;
+  @extend .justify-items-center;
   @extend .stack-large;
+
+  @media (min-width: 950px) {
+    grid-template-columns: 1fr 1fr;
+    @include gap($g: 2rem);
+  }
+}
+
+.page-heading {
+  @extend .text-align-center;
+  font-weight: var(--bold);
+  
 }

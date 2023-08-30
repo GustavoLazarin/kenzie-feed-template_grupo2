@@ -14,6 +14,11 @@
 
   @include padding-inline($p:1rem);
 
+  a {
+    display: block;
+    font-weight: var(--bold)
+  }
+
   .header__user {
     @extend .flex;
     @include gap($g: 1rem);
