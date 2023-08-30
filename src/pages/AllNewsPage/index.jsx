@@ -1,6 +1,6 @@
 import { Footer } from "../../components/Footer";
 import { NewsList } from "../../components/NewsList";
-import { Header } from "../../components/header";
+import { Header } from "../../components/Header";
 
 export const AllNewsPage = () => {
 	return (
