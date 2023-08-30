@@ -5,10 +5,20 @@ import { Header } from "../../components/header";
 import { useParams } from "react-router-dom";
 import { api } from "../../services/api";
 import { RxHeart } from "react-icons/rx";
+import { useNewsContext } from "../../providers/NewsContext";
 
 export const SinglePage = () => {
 	const { id } = useParams();
-	const [singlePost, setSinglePost] = useState({});
+	const { singlePost, setSinglePost } = useNewsContext();
+
+	let amountPosts = 0;
+	const { posts } = useNewsContext();
+	const newPosts = posts.filter(post => {
+		if (post.id !== singlePost.id && amountPosts < 2) {
+			amountPosts++;
+			return post;
+		}
+	});
 
 	useEffect(() => {
 		const getPostById = async () => {
@@ -46,7 +56,7 @@ export const SinglePage = () => {
 				</article>
 				<section>
 					<h1>Leia também</h1>
-					<NewsList />
+					<NewsList newPosts={newPosts} />
 				</section>
 			</main>
 			<Footer />
