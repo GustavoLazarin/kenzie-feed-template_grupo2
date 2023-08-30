@@ -6,6 +6,7 @@ body {
 button,
 span,
 a,
+p,
 .author,
 input,
 textarea,
@@ -19,16 +20,20 @@ span {
 }
 
 .heading-2 {
-  // @extend .text-align-center;
+  @extend .text-align-center;
 
   font-weight: var(--bold);
 
   font-size: var(--title-3);
 
-  @media (min-width: 400px) {
+  @media (min-width: 500px) {
     font-size: var(--title-2-mobile);
   }
-  @media (min-width: 640px) {
+  @media (min-width: 800px) {
     font-size: var(--title-2);
   }
+}
+
+h1 {
+  line-height: 150%;
 }
