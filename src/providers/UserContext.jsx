@@ -13,6 +13,7 @@ export const UserProvider = ({ children }) => {
 
     const navigate = useNavigate();
 
+
     const registerRequest = async (formData, reset) => {
         try {
             await api.post("/users", formData);
@@ -45,12 +46,18 @@ export const UserProvider = ({ children }) => {
         navigate("/");
     }
 
-    const userPosts = async () => {
-        
+    const getUserPosts = async () => {
+        const user = localStorage.getItem("@USER");
+        try {
+            const {data} = await api.get(`/posts/?${user.name}`);
+            return data;
+        } catch (error) {
+            console.log(error);
+        }
     }
 
     return(
-    <UserContext.Provider value={{registerRequest, loginRequest, logOut, user}}>
+    <UserContext.Provider value={{registerRequest, loginRequest, logOut}}>
         {children}
     </UserContext.Provider>
     )
