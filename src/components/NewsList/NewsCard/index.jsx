@@ -4,14 +4,21 @@ import { useNewsContext } from "../../../providers/NewsContext";
 export const NewsCard = ({ post }) => {
 	const { setSinglePost } = useNewsContext();
 
-	return (
-		<li>
-			<img src={post.image} alt={post.title} />
-			<span>Por: {post.owner}</span>
-			<h3>{post.title}</h3>
-			<Link to={`/news/${post.id}`} onClick={() => setSinglePost(post)}>
-				Leia mais
+  return (
+    <li className="stack-large">
+      <img className="w-full" src={post.image} alt={post.title} />
+      <div className="stack-medium">
+        <span className="author">Por: {post.owner}</span>
+        <h3 className="post-title">{post.title}</h3>
+		<div>
+
+        <Link className="btn__tertiary" to={`/news/${post.id}`} onClick={() => setSinglePost(post)}>
+				
+          Leia mais
+        
 			</Link>
-		</li>
-	);
+		</div>
+      </div>
+    </li>
+  );
 };

@@ -1,3 +1,5 @@
+@import "./flex.scss";
+
 .w-full {
   width: 100%;
 }
@@ -10,6 +12,14 @@
 .h-full {
   height: 100%;
 }
+.min-w-full {
+  min-width: 100%;
+}
+
+.min-w-0 {
+  min-width: 0;
+}
+
 .min-w-full {
   min-width: 100%;
 }
