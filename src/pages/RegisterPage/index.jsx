@@ -6,17 +6,17 @@ import { Header } from "../../components/header"
 export const RegisterPage = () => {
 
     return (
-      <>
+      <div className="everything">
         <Header/>
-          <section>
+          <main className="content">
               <Link to="/login">Voltar</Link>
               <div>
-                  <h2>Cadastre um usuário</h2>
-                  <p>Preencha os campos corretamente para fazer login</p>
+                  <h1 className="heading-2">Cadastre um usuário</h1>
+                  <p className="text-align-center">Preencha os campos corretamente para fazer login</p>
               </div>
               <RegisterForm/>
-          </section>
+          </main>
        <Footer/>
-      </>
+      </div>
     )
 }
