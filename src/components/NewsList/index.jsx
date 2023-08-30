@@ -1,9 +1,9 @@
 import { NewsCard } from "./NewsCard";
 
-export const NewsList = () => {
+export const NewsList = ({ newPosts }) => {
 	return (
 		<ul>
-			{posts.map(post => (
+			{newPosts.map(post => (
 				<NewsCard key={post.id} post={post} />
 			))}
 		</ul>
