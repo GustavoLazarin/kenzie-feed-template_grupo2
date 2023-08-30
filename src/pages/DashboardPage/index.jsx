@@ -1,7 +1,7 @@
 import { useEffect } from "react";
+import { Header } from "../../components/header";
 import { Footer } from "../../components/Footer";
 import { UserNewsList } from "../../components/UserNewsList";
-import { Header } from "../../components/Header";
 import { MdAddCircleOutline } from "react-icons/md"
 import { useNewsContext } from "../../providers/NewsContext";
 

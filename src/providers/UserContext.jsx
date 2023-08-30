@@ -29,7 +29,7 @@ export const UserProvider = ({ children }) => {
         try {
             const { data } = await api.post('/login', formData);
             localStorage.setItem("@TOKEN", data.accessToken);
-            localStorage.setItem("@USER", data.user);
+            localStorage.setItem("@USER", JSON.stringify(data.user));
             navigate('/dashboard');
             toast.success('Login feito com sucesso, você será redirecionado(a) para a dashboard')
         } catch (error) {
@@ -44,16 +44,6 @@ export const UserProvider = ({ children }) => {
         localStorage.removeItem("@TOKEN");
         localStorage.removeItem("@USER");
         navigate("/");
-    }
-
-    const getUserPosts = async () => {
-        const user = localStorage.getItem("@USER");
-        try {
-            const {data} = await api.get(`/posts/?${user.name}`);
-            return data;
-        } catch (error) {
-            console.log(error);
-        }
     }
 
     return(
