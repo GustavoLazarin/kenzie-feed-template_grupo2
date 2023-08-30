@@ -6,7 +6,6 @@ import { registerFormSchema } from "./registerFormSchema";
 import { useUserContext } from "../../../providers/UserContext";
 
 export const RegisterForm = () => {
-
   const { registerRequest } = useUserContext();
 
   const {
@@ -24,14 +23,17 @@ export const RegisterForm = () => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit(submit)}>
-        <div>
+      <form className="grid register__form__lg form__register-gap" onSubmit={handleSubmit(submit)}>
+        <div className="register__input">
           <Input
             type="text"
             placeholder="Nome"
             error={errors.name}
             {...register("name")}
           />
+        </div>
+
+        <div className="register__input">
           <Input
             type="email"
             placeholder="E-mail"
@@ -39,19 +41,23 @@ export const RegisterForm = () => {
             {...register("email")}
           />
         </div>
-        <div>
+        <div className="register__input">
           <InputPassword
             placeholder="Senha"
             error={errors.password}
             {...register("password")}
           />
+        </div>
+        <div className="register__input">
           <InputPassword
             placeholder="Confirmar senha"
             error={errors.confirmPassword}
             {...register("confirmPassword")}
           />
         </div>
-        <button type="submit">Cadastrar-se</button>
+        <button className="btn btn__primary btn__small grid-col-2 btn__register" type="submit">
+          Cadastrar-se
+        </button>
       </form>
     </div>
   );
