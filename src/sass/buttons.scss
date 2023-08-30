@@ -3,12 +3,10 @@
 @import "./sizing.scss";
 @import "./flex.scss";
 
-
 @mixin transition($i: var(--color-blue), $f: var(--color-blue-hover)) {
   transition: background-color 300ms;
   background-color: $i;
 
-  
   &:hover {
     background-color: $f;
   }
@@ -22,13 +20,12 @@ a {
 .btn {
   @extend .w-full;
   max-width: var(--input-max-width);
-  
-  font-weight: var(--bold);
-  
-  border-radius: var(--small-radius);
-  
-  color: var(--color-black);
 
+  font-weight: var(--bold);
+
+  border-radius: var(--small-radius);
+
+  color: var(--color-black);
 }
 
 // Tamanho de btn
@@ -57,26 +54,37 @@ a {
 .btn__primary {
   @include transition;
   color: var(--color-white);
+  outline: var(--border-thickness) var(--color-blue);
 }
 
 //  botão branco (dashboard | voltar)
 .btn__secondary {
-    @include transition($i:var(--color-white), $f:var(--color-grey));
-    
-    
+  @include transition($i: var(--color-white), $f: var(--color-light-blue));
+
+  border: var(--border-thickness) var(--color-blue);
+
+  max-width: 7.5rem;
 }
 
 //  cadastre-se | leia mais (pode ser um button ou um link)
 .btn__tertiary {
-    background-color: var(--color-white);
+  background-color: var(--color-white);
 
-    font-weight: var(--regular);
-    text-decoration: underline;
-    
-    color: var(--color-blue);
-    
-    // @include transition($i:var(--color-white), $f:var(--color-grey));
-    &:hover {
-      color: var(--color-blue-hover);
-    }
+  font-weight: var(--regular);
+  text-decoration: underline;
+
+  color: var(--color-blue);
+
+  // @include transition($i:var(--color-white), $f:var(--color-grey));
+  &:hover {
+    color: var(--color-blue-hover);
+  }
+}
+
+.btn__register {
+  @media (min-width: 800px) {
+    max-width: var(--btn-max-width);
+    min-width: 0;
+    justify-self: end;
+  }
 }
