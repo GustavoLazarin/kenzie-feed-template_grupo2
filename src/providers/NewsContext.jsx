@@ -1,16 +1,19 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { api } from "../services/api";
-const NewsContext = createContext({});
 import { toast } from "react-toastify";
+
+const NewsContext = createContext({});
 
 export const useNewsContext = () => {
 	return useContext(NewsContext);
 };
 
 export const NewsProvider = ({ children }) => {
-
 	const [posts, setPosts] = useState([]);
 	const [singlePost, setSinglePost] = useState({});
+    const [ownPosts, setOwnPosts] = useState([]);
+    //stado para capturar post que está sendo editado
+    const [editingPost, setEditingPost] = useState(null);
 
 	useEffect(() => {
 		const getAllPosts = async () => {
@@ -21,9 +24,6 @@ export const NewsProvider = ({ children }) => {
 		getAllPosts();
 	}, []);
 
-    const [ownPosts, setOwnPosts] = useState([]);
-    //stado para capturar post que está sendo editado
-    const [editingPost, setEditingPost] = useState(null);
 
     const getOwnPosts = async () => {
         const user = localStorage.getItem("@USER")
