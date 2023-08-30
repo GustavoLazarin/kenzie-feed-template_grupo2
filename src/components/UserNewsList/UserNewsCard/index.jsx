@@ -1,6 +1,16 @@
 import { MdOutlineEdit, MdDeleteOutline } from "react-icons/md"
+import { useNavigate } from "react-router-dom"
+import { useNewsContext } from "../../../providers/NewsContext"
 
 export const UserNewsCard = ({post}) => {
+    const navigate = useNavigate()
+    const { setEditingPost} = useNewsContext();
+
+    const editBttn = (post)=>{
+        setEditingPost(post);
+        navigate(`/edit/${post.id}`);
+    }
+
     return (
         <li>
             <div>
@@ -8,8 +18,8 @@ export const UserNewsCard = ({post}) => {
                 <h3>{post.title}</h3>
             </div>
             <div>
-                <button><MdOutlineEdit/></button>
-                <button><MdDeleteOutline/></button>
+                <button onClick={()=>editBttn(post)}><MdOutlineEdit/></button>
+                <button ><MdDeleteOutline/></button>
             </div>
         </li>
     )

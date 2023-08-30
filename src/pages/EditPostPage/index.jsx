@@ -1,13 +1,21 @@
 import { Footer } from "../../components/Footer"
+import { EditForm } from "../../components/forms/EditForm"
 import { Header } from "../../components/header"
 
 export const EditPostPage = () => {
     return (
         <div>
             <Header/>
-            <section>
+            <main>
+              <div>
+                <h1>Editando:</h1>
+                <button>Voltar</button>
+                </div>  
 
-            </section>
+                <div>
+                    <EditForm/>
+                </div>
+            </main>
             <Footer/>
         </div>
     )
