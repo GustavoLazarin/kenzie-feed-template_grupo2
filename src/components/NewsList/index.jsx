@@ -1,24 +1,11 @@
-import { NewsCard } from "./NewsCard";
-import { useEffect, useState } from "react";
-import { api } from "../../services/api";
+import { NewsCard } from './NewsCard';
 
-export const NewsList = () => {
-  const [posts, setPosts] = useState([]);
-
-  useEffect(() => {
-    const getAllPosts = async () => {
-      const { data } = await api.get("posts?_embed=likes");
-      setPosts(data);
-    };
-
-    getAllPosts();
-  }, []);
-
-  return (
-    <ul className="grid justify-items-center register__form__lg news-gap">
-      {posts.map((post) => (
-        <NewsCard key={post.id} post={post} />
-      ))}
-    </ul>
-  );
+export const ({ newPosts }) => {
+	return (
+		<ul className="grid justify-items-center register__form__lg news-gap">
+    {newPosts.map(post => (
+      <NewsCard key={post.id} post={post} />
+    ))}
+  </ul>
+	);
 };

@@ -1,16 +1,21 @@
+
 import { Footer } from "../../components/Footer";
-import { Header } from "../../components/header";
 import homeImg from "../../assets/homeImg.svg";
 import { Link } from "react-router-dom";
 import { NewsList } from "../../components/NewsList";
+import { useNewsContext } from "../../providers/NewsContext";
+import { Header } from '../../components/Header';
 
 export const HomePage = () => {
-  return (
-    <div className="everything">
+	const { posts } = useNewsContext();
+	const newPostsList = posts.slice(0, 4);
+
+	return (
+		<div className="everything">
       <Header />
       <main className="content">
         <section className="stack-large">
-          <p className="bold text-align-center">KENZIE FEED</p>
+          <h3 className="bold text-align-center">KENZIE FEED</h3>
           <h1 className="heading-2">Seja muito bem vindo ao KenzieFeed</h1>
           <div className="stack-x-large">
 			<p className="text-align-center">Fique por dentro das últimas notícias</p>
@@ -25,7 +30,7 @@ export const HomePage = () => {
             <Link className="btn__register btn btn__primary btn__small" to={"/news"}>Ver tudo</Link>
 			</div>
           </div>
-          <NewsList />
+          <NewsList newPosts={newPostsList} />
         </section>
       </main>
       <Footer />

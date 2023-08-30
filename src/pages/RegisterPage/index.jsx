@@ -1,7 +1,7 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Footer } from "../../components/Footer";
 import { RegisterForm } from "../../components/forms/RegisterForm";
-import { Header } from "../../components/header";
+import { Header } from "../../components/Header";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 
 export const RegisterPage = () => {

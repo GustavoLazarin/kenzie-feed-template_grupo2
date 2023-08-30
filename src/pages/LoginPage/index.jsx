@@ -1,5 +1,5 @@
 import { Footer } from "../../components/Footer";
-import { Header } from "../../components/header";
+import { Header } from "../../components/Header";
 import loginImg from "../../assets/loginImg.svg";
 import { Link } from "react-router-dom";
 import { LoginForm } from "../../components/forms/LoginForm";
