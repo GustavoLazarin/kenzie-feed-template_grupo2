@@ -21,7 +21,7 @@
   --color-black: #000000;
   --color-white: #ffffff;
   --color-grey: #f3f3f3;
-  --color-grey-hover: #9f9f9f;
+  --color-grey-hover: #c3c3c3;
   --color-blue: #55a3ff;
   --color-blue-hover: #357bca;
 
@@ -42,6 +42,9 @@
   --title-post: 2.25rem;
   --title-post-mobile: 1.75rem;
 
+  --input-large: 1.25rem;
+  --input-normal: 1rem;
+
   --paragraph: 1.125rem;
   --paragraph-mobile: 1rem;
 
@@ -55,4 +58,10 @@
   --small-radius: 0.25rem;
 
   --large-radius: 1.5rem;
+
+  // espessura borda
+
+  --border-thickness: 2px solid;
+
+  --input-max-width: 30rem;
 }

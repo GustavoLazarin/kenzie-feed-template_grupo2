@@ -17,3 +17,7 @@
   @mixin margin-left($m: var(--s0)) {
     margin-inline-start: $m;
   }
+
+  .margin-block-start-24 {
+    margin-block-start: 1.5rem;
+  }
