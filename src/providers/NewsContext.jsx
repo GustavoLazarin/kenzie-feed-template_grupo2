@@ -9,6 +9,7 @@ export const useNewsContext = () => {
 
 export const NewsProvider = ({ children }) => {
 	const [posts, setPosts] = useState([]);
+	const [singlePost, setSinglePost] = useState({});
 
 	useEffect(() => {
 		const getAllPosts = async () => {
@@ -20,7 +21,8 @@ export const NewsProvider = ({ children }) => {
 	}, []);
 
 	return (
-		<NewsContext.Provider value={{ posts, setPosts }}>
+		<NewsContext.Provider
+			value={{ posts, setPosts, singlePost, setSinglePost }}>
 			{children}
 		</NewsContext.Provider>
 	);
