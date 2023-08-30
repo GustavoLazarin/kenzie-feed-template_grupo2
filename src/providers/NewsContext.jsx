@@ -1,11 +1,27 @@
-import { createContext, useContext } from "react"
+import { createContext, useContext, useEffect, useState } from "react";
+import { api } from "../services/api";
 
-const NewsContext = createContext({})
+const NewsContext = createContext({});
 
 export const useNewsContext = () => {
-    return useContext(NewsContext)
-}
+	return useContext(NewsContext);
+};
 
 export const NewsProvider = ({ children }) => {
-    return <NewsContext.Provider value={{}}>{children}</NewsContext.Provider>
-}
+	const [posts, setPosts] = useState([]);
+
+	useEffect(() => {
+		const getAllPosts = async () => {
+			const { data } = await api.get("posts?_embed=likes");
+			setPosts(data);
+		};
+
+		getAllPosts();
+	}, []);
+
+	return (
+		<NewsContext.Provider value={{ posts, setPosts }}>
+			{children}
+		</NewsContext.Provider>
+	);
+};
