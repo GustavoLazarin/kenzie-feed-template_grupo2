@@ -3,6 +3,7 @@
 body {
   font-family: var(--font-serif);
 }
+
 button,
 span,
 a,
@@ -25,38 +26,37 @@ span {
 
   font-weight: var(--bold);
 }
+
 .heading-2 {
-  font-size: var(--title-3);
+  font-size: clamp(var(--title-3), 3.4vw, var(--title-2));
+}
+
+.heading-3 {
+  font-size: var(--paragraph);
 
   @media (min-width: 650px) {
     font-size: var(--title-2-mobile);
   }
+
   @media (min-width: 950px) {
     font-size: var(--title-2);
   }
-}
-.heading-3 {
-  font-size: var(--paragraph);
-  
-  @media (min-width: 650px) {
-    font-size: var(--title-2-mobile);
-  }
-  @media (min-width: 950px) {
-    font-size: var(--title-2);
-  }
-  
+
 }
 
 h1 {
   line-height: 150%;
 }
+
 .bold {
   font-weight: var(--bold);
 }
+
 .author {
   font-size: var(--small-paragraph);
   color: var(--color-black);
 }
+
 .post-title {
   line-height: 120%;
   font-weight: var(--bold);

@@ -7,13 +7,12 @@
 @import "./margin.scss";
 
 form {
-  // @extend .stack-medium;
-  
   @extend .grid;
   @extend .align-items-center;
 
 
   @extend .w-full;
+
   input {
     @include padding-inline($p: 1.5rem);
     @extend .min-w-full;
@@ -30,10 +29,12 @@ form {
     &:hover {
       outline: var(--border-thickness) var(--color-grey-hover);
     }
+
     &:focus {
       outline: var(--border-thickness) var(--color-blue);
     }
   }
+
   button {
     @extend .min-w-full;
   }
@@ -41,16 +42,13 @@ form {
 
 .input-large {
   @include padding-block($p: .5rem);
-  
+
 }
 
 .register__input {
   @extend .w-full;
 
-  // max-width: 500px;
- 
-  @media (min-width:950px){
+  @media (min-width:950px) {
     height: 5rem;
   }
 }
-// font-size: var(--input-large);
