@@ -26,7 +26,6 @@ export const NewsProvider = ({ children }) => {
         }
     }
 
-
     return (
     <NewsContext.Provider value={{ownPosts}}>
         {children}
