@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from "react"
+import { createContext, useContext, useState } from "react"
 import { api } from "../services/api";
 
 const NewsContext = createContext();
@@ -10,11 +10,6 @@ export const useNewsContext = () => {
 export const NewsProvider = ({ children }) => {
 
     const [ownPosts, setOwnPosts] = useState([]);
-
-    // Efeito de montagem, executa 1vez na montagem do componente
-    useEffect(() => {
-        getOwnPosts(); //Faz uma requisição GET nos posts do usuário
-    }, [])
 
     const getOwnPosts = async () => {
         const user = localStorage.getItem("@USER")
@@ -28,7 +23,7 @@ export const NewsProvider = ({ children }) => {
 
 
     return (
-    <NewsContext.Provider value={{ownPosts}}>
+    <NewsContext.Provider value={{ownPosts, getOwnPosts}}>
         {children}
     </NewsContext.Provider>
     )
