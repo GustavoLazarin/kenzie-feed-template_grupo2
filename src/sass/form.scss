@@ -1,4 +1,45 @@
+@import "./grid.scss";
+@import "./sizing.scss";
+@import "./flex.scss";
+@import "./position.scss";
+@import "./padding.scss";
+@import "./container.scss";
+@import "./margin.scss";
+
 form {
-    // qq coisa só pra não quebrar
-    display: inline-block;
+  // qq coisa só pra não quebrar
+  @extend .stack-medium;
+  
+  @extend .grid;
+  @extend .align-items-center;
+
+
+  @extend .w-full;
+  input {
+    @include padding-inline($p: 1.5rem);
+    @extend .min-w-full;
+
+    max-width: var(--input-max-width);
+
+    outline: var(--border-thickness) var(--color-grey);
+
+    border-radius: var(--small-radius);
+
+    transition: outline 300ms;
+
+    &:hover {
+      outline: var(--border-thickness) var(--color-grey-hover);
+    }
+    &:focus {
+      outline: var(--border-thickness) var(--color-blue);
+    }
+  }
+  button {
+    @extend .min-w-full;
+  }
+}
+
+.input-large {
+  @include padding-inline($p: 1.5rem);
+  font-size: var(--input-large);
 }
