@@ -7,8 +7,7 @@
 @import "./margin.scss";
 
 form {
-  // qq coisa só pra não quebrar
-  @extend .stack-medium;
+  // @extend .stack-medium;
   
   @extend .grid;
   @extend .align-items-center;
@@ -18,6 +17,7 @@ form {
   input {
     @include padding-inline($p: 1.5rem);
     @extend .min-w-full;
+    @extend .w-full;
 
     max-width: var(--input-max-width);
 
@@ -42,5 +42,15 @@ form {
 .input-large {
   @include padding-block($p: .5rem);
   
+}
+
+.register__input {
+  @extend .w-full;
+
+  // max-width: 500px;
+ 
+  @media (min-width:950px){
+    height: 5rem;
+  }
 }
 // font-size: var(--input-large);
