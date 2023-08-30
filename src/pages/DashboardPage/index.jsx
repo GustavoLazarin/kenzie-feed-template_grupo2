@@ -1,7 +1,7 @@
 import { useEffect } from "react"
+import { Header } from "../../components/Header"
 import { Footer } from "../../components/Footer"
 import { UserNewsList } from "../../components/UserNewsList"
-import { Header } from "../../components/header"
 import { MdAddCircleOutline } from "react-icons/md"
 import { useNewsContext } from "../../providers/NewsContext"
 import { NewPostModal } from "../../components/modals/NewPostModal"
@@ -16,7 +16,6 @@ export const DashboardPage = () => {
 
     return (
         <div>
-            {isCreating ? <NewPostModal /> : null}
             <Header />
             <section>
                 <div>
@@ -29,6 +28,7 @@ export const DashboardPage = () => {
                 <UserNewsList />
             </section>
             <Footer />
+            {isCreating ? <NewPostModal /> : null}
         </div>
     )
 }

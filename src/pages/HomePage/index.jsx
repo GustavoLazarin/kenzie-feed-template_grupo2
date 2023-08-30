@@ -1,10 +1,15 @@
-import { Footer } from '../../components/Footer';
-import { Header } from '../../components/header';
-import homeImg from '../../assets/homeImg.svg';
-import { Link } from 'react-router-dom';
-import { NewsList } from '../../components/NewsList';
+
+import { Footer } from "../../components/Footer";
+import homeImg from "../../assets/homeImg.svg";
+import { Link } from "react-router-dom";
+import { NewsList } from "../../components/NewsList";
+import { useNewsContext } from "../../providers/NewsContext";
+import { Header } from '../../components/Header';
 
 export const HomePage = () => {
+	const { posts } = useNewsContext();
+	const newPostsList = posts.slice(0, 4);
+
 	return (
 		<div>
 			<Header />
@@ -18,9 +23,9 @@ export const HomePage = () => {
 				<section>
 					<div>
 						<h2>Últimas notícias</h2>
-						<Link to={'/news'}>Ver tudo</Link>
+						<Link to={"/news"}>Ver tudo</Link>
 					</div>
-					<NewsList />
+					<NewsList newPosts={newPostsList} />
 				</section>
 			</main>
 			<Footer />
