@@ -3,6 +3,7 @@ import { Input } from "../inputs/Input"
 import { TextArea } from "../inputs/TextArea"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { NewPostFormSchema } from "./NewPostFormSchema"
+import { useNewsContext } from "../../../providers/NewsContext"
 
 export const NewPostForm = () => {
     const {
@@ -14,8 +15,10 @@ export const NewPostForm = () => {
         resolver: zodResolver(NewPostFormSchema),
     })
 
+    const { createPost } = useNewsContext()
+
     const submit = (formData) => {
-        console.log(formData)
+        createPost(formData)
     }
 
     return (
