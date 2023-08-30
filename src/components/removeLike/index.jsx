@@ -12,7 +12,7 @@ export const LikeButton = () => {
       setLikes(likes - 1);
     }
   };
-
+  
   return (
     <div>
       <button onClick={handleLike}>Curtir</button>
