@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from "react"
+import { createContext, useContext, useState } from "react"
 import { api } from "../services/api";
 import { toast } from "react-toastify";
 
@@ -13,11 +13,6 @@ export const NewsProvider = ({ children }) => {
     const [ownPosts, setOwnPosts] = useState([]);
     //stado para capturar post que está sendo editado
     const [editingPost, setEditingPost] = useState(null);
-
-    // Efeito de montagem, executa 1vez na montagem do componente
-    useEffect(() => {
-        getOwnPosts(); //Faz uma requisição GET nos posts do usuário
-    }, [])
 
     const getOwnPosts = async () => {
         const user = localStorage.getItem("@USER")
@@ -55,7 +50,7 @@ export const NewsProvider = ({ children }) => {
     }
 
     return (
-    <NewsContext.Provider value={{ownPosts, editingPost, setEditingPost, editPost}}>
+    <NewsContext.Provider value={{ownPosts, getOwnPosts, editPost, editingPost, setEditingPost}}>
         {children}
     </NewsContext.Provider>
     )

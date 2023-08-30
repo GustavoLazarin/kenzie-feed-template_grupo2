@@ -1,6 +1,6 @@
-import { Footer } from "../../components/Footer"
-import { EditForm } from "../../components/forms/EditForm"
-import { Header } from "../../components/header"
+import { EditForm } from "../../components/forms/EditForm";
+import { Header } from "../../components/Header";
+import { Footer } from "../../components/Footer";
 
 export const EditPostPage = () => {
     return (
