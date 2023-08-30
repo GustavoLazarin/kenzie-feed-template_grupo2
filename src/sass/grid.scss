@@ -35,18 +35,16 @@
   }
 }
 
-// .register__form__lg {
-  
-//   @media (min-width: 950px) {
-//     display: grid;
-//     // grid-template-columns: 1fr 1fr;
-//     row-gap: 0.75rem;
-//     column-gap: 1.125rem;
-//   }
-// }
+.grid-lg {
+  @media (min-width: 950px) {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 0.75rem;
+    column-gap: 1.125rem;
+  }
+}
 
 .grid-col-2 {
-  grid-column: span 2;
+  // grid-column: span 2;
   @media (min-width: 950px) {
     grid-column: 2;
   }

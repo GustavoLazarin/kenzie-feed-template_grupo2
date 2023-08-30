@@ -23,7 +23,7 @@ export const RegisterForm = () => {
 
   return (
     <div>
-      <form className="grid register__form__lg form__register-gap" onSubmit={handleSubmit(submit)}>
+      <form className="grid grid-lg form__register-gap" onSubmit={handleSubmit(submit)}>
         <div className="register__input">
           <Input
             type="text"
