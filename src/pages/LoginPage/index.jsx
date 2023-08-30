@@ -8,7 +8,7 @@ export const LoginPage = () => {
   return (
     <div className="everything">
       <Header />
-      <main className="content">
+      <main className="content content-large-screen">
         <picture>
           <img src={loginImg} alt="Imagem de login" />
         </picture>

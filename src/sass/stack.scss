@@ -2,6 +2,9 @@
     /* top and bottom margins in horizontal-tb writing mode */
     margin-block: 0;
   }
+  .stack-2x-large > * + * {
+    margin-block-start: var(--s3);
+  }
   .stack-x-large > * + * {
     margin-block-start: var(--s2);
   }
