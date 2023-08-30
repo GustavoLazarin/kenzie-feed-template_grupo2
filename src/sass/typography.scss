@@ -1,13 +1,34 @@
+@import "./flex.scss";
 
 body {
-    font-family: var(--font-serif);
+  font-family: var(--font-serif);
 }
-    button,
-    a,
-    .author,
-    input,
-    textarea,
-    footer,
-    .paragraph {
-      font-family: var(--font-sans-serif);
-    }
+button,
+span,
+a,
+.author,
+input,
+textarea,
+footer,
+.paragraph {
+  font-family: var(--font-sans-serif);
+}
+
+span {
+  color: rgba(255, 0, 0, 0.866);
+}
+
+.heading-2 {
+  // @extend .text-align-center;
+
+  font-weight: var(--bold);
+
+  font-size: var(--title-3);
+
+  @media (min-width: 400px) {
+    font-size: var(--title-2-mobile);
+  }
+  @media (min-width: 640px) {
+    font-size: var(--title-2);
+  }
+}

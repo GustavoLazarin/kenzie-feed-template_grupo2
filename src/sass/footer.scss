@@ -7,12 +7,17 @@
 @import "./stack.scss";
 @import "./margin.scss";
 
-.content,
-header,
-footer {
-  @include padding-inline($p: 1rem);
-}
 
-.content {
-  @extend .stack-large;
-}
+
+footer {
+    @include margin-block($m: var(--s3));
+    @extend .flex;
+    @extend .justify-items-center;
+    @extend .text-align-center;
+    
+    &>* {
+      @extend .min-w-full;
+    }
+
+  }
+  

@@ -1,5 +1,6 @@
 //  botão azulzinho
 @import "./padding.scss";
+@import "./sizing.scss";
 
 
 @mixin transition($i: var(--color-blue), $f: var(--color-blue-hover)) {
@@ -12,7 +13,14 @@
   }
 }
 
+a, button {
+  @extend .w-full;
+  max-width: var(--input-max-width);
+
+}
+
 button {
+  
   font-weight: var(--bold);
 
   border-radius: var(--small-radius);
@@ -62,7 +70,10 @@ button {
     font-weight: var(--regular);
     text-decoration: underline;
     
+    color: var(--color-blue);
     
-    @include transition($i:var(--color-white), $f:var(--color-grey));
-    
+    // @include transition($i:var(--color-white), $f:var(--color-grey));
+    &:hover {
+      color: var(--color-blue-hover);
+    }
 }

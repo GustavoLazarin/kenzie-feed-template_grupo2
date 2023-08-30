@@ -8,8 +8,11 @@
 .header {
   @extend .flex;
   @extend .space-between;
+  @extend .align-items-center;
 
   @include margin-block($m: var(--s2));
+
+  @include padding-inline($p:1rem);
 
   .header__user {
     @extend .flex;
