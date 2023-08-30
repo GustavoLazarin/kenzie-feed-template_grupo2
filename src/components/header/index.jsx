@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import { useUserContext } from "../../providers/UserContext";
+import Logo from '../../assets/KenzieFeed-Logo.svg';
+
 
 export const Header = () => {
   const { logOut } = useUserContext();
@@ -8,7 +10,7 @@ export const Header = () => {
   return (
     <header>
       <div className="header">
-        <img src="#" alt="KZ-logo" />
+        <img src={Logo} alt="KZ-logo" />
         {token ? (
           <div className="header__user">
             <button>Usuário</button>
