@@ -15,7 +15,7 @@ export const NewsList = () => {
   }, []);
 
   return (
-    <ul className="grid news-gap">
+    <ul className="grid justify-items-center register__form__lg news-gap">
       {posts.map((post) => (
         <NewsCard key={post.id} post={post} />
       ))}
