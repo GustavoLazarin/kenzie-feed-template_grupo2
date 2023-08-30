@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react"
 
-export const useClickOut = (callback) => {
+export const useOutClick = (callback) => {
     const ref = useRef(null)
 
     useEffect(() => {

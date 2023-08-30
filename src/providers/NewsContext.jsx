@@ -35,9 +35,11 @@ export const NewsProvider = ({ children }) => {
                 },
             })
 
-            toast.success("Post criado com sucesso")
-
             setOwnPosts([...ownPosts, data])
+
+            setIsCreating(false)
+
+            toast.success("Post criado com sucesso")
         } catch (error) {
             if (error.response.data.length > 0) {
                 console.log(error.response.data)
