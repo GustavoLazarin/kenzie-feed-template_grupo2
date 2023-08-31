@@ -34,11 +34,13 @@ export const EditForm = ()=>{
 
     return(
         <>
-        <form onSubmit={handleSubmit(submit)} >
+        <form
+        className="stack-medium grid"
+        onSubmit={handleSubmit(submit)} >
         <Input label={"Título"} type={"text"} id={"title"} error={errors.title} {...register("title")}/>
         <Input label={"Imagem em destaque"} type={"image"} id={"image"} error={errors.image} {...register("image")}/>
         <TextArea label={"Conteúdo"} id={"description"} error={errors.description} {...register("description")} />
-        <button type="submit">Salvar post</button>
+        <button className="btn__primary btn btn-max-width justify-self-end btn__small" type="submit">Salvar post</button>
         </form>
         </>
     )
