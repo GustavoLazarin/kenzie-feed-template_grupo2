@@ -1,16 +1,57 @@
-.grid {
-    display: grid;
-  }
-  .justify-items-center {
-    justify-items: center;
-  }
-  .justify-self-center {
-    justify-self: center;
-  }
+@import "./sizing.scss";
+@import "./flex.scss";
+@import "./position.scss";
+@import "./padding.scss";
+@import "./container.scss";
+@import "./stack.scss";
+@import "./margin.scss";
 
-  .grid-page {
-    @extend .grid;
-    grid-template-rows: auto
-                        1fr
-                        auto;
+.grid {
+  display: grid;
+}
+.justify-items-center {
+  justify-items: center;
+}
+.justify-self-center {
+  justify-self: center;
+}
+
+.grid-btn__back {
+  grid-template-columns: auto auto;
+}
+
+.grid-page {
+  @extend .grid;
+  grid-template-rows:
+    auto
+    1fr
+    auto;
+}
+
+.content-large-screen {
+  @media (min-width: 950px) {
+    grid-template-columns: 1fr 1fr;
+    @include gap($g: 2rem);
   }
+}
+
+.grid-lg {
+  @media (min-width: 950px) {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 0.75rem;
+    column-gap: 1.125rem;
+  }
+}
+.grid-news {
+  @media (min-width: 950px) {
+    grid-template-columns: 47% 47%;
+    row-gap: 6%;
+    column-gap: 1.125rem;
+  }
+}
+
+.grid-col-2 {
+  @media (min-width: 750px) {
+    grid-column: 2;
+  }
+}

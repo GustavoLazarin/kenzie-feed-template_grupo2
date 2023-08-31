@@ -3,6 +3,7 @@
 body {
   font-family: var(--font-serif);
 }
+
 button,
 span,
 a,
@@ -19,21 +20,52 @@ span {
   color: rgba(255, 0, 0, 0.866);
 }
 
-.heading-2 {
+.heading-2,
+.heading-3 {
   @extend .text-align-center;
 
   font-weight: var(--bold);
+}
 
-  font-size: var(--title-3);
+.heading-2 {
+  font-size: clamp(var(--title-3), 3.4vw, var(--title-2));
+}
 
-  @media (min-width: 500px) {
+.heading-3 {
+  font-size: var(--paragraph);
+
+  @media (min-width: 650px) {
     font-size: var(--title-2-mobile);
   }
-  @media (min-width: 800px) {
+
+  @media (min-width: 950px) {
     font-size: var(--title-2);
   }
+
 }
 
 h1 {
   line-height: 150%;
+}
+
+.bold {
+  font-weight: var(--bold);
+}
+
+.author {
+  font-size: var(--small-paragraph);
+  color: var(--color-black);
+}
+
+.post-title {
+  line-height: 120%;
+  font-weight: var(--bold);
+
+  font-size: clamp(var(--title-post-mobile), 2vw, var(--title-post));
+
+  // font-size: var(--title-post-mobile);
+
+  // @media (min-width: 750px) {
+  //   font-size: var(--title-post);
+  // }
 }

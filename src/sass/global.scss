@@ -11,7 +11,6 @@
   @extend .justify-items-center;
   @extend .grid-page;
 
-
   height: 100dvh;
 }
 
@@ -30,11 +29,9 @@ footer {
   @extend .justify-items-center;
   @extend .stack-large;
 
-  @media (min-width: 950px) {
-    grid-template-columns: 1fr 1fr;
-    @include gap($g: 2rem);
-  }
+
 }
+
 
 .page-heading {
   @extend .text-align-center;
