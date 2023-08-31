@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import { HomePage } from "../pages/HomePage";
 import { AllNewsPage } from "../pages/AllNewsPage";
 import { SinglePage } from "../pages/SinglePage";
@@ -8,8 +8,12 @@ import { DashboardPage } from "../pages/DashboardPage";
 import { EditPostPage } from "../pages/EditPostPage";
 import { PrivateRoutes } from "./PrivateRoutes";
 import { PublicRoutes } from "./PublicRoutes";
+import { useNewsContext } from "../providers/NewsContext";
 
 export const RoutesMain = () => {
+	const { editingPost } = useNewsContext();
+	const navigate = useNavigate()
+
 	return (
 		<Routes>
 			<Route element={<PublicRoutes />}>
@@ -23,7 +27,7 @@ export const RoutesMain = () => {
 
 			<Route element={<PrivateRoutes />}>
 				<Route path="/dashboard" element={<DashboardPage />} />
-				<Route path="/edit/:id" element={<EditPostPage />} />
+				{editingPost? <Route path="/edit/:id" element={<EditPostPage />} />: navigate("/dashboard")}
 			</Route>
 		</Routes>
 	);
