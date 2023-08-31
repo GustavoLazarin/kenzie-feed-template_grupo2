@@ -1,0 +1,28 @@
+.userCard {
+    @extend .grid;
+    @extend .align-items-center;
+    @extend .min-w-full;
+
+
+
+    grid-template-columns: auto 1fr auto;
+    @extend .space-between;
+    @include gap($g: 2rem);
+    // @
+    img {
+        @extend .w-full;
+        width: 160px;
+        height: 160px;
+    }
+    h3 {
+        max-inline-size: 40ch;
+    }
+}
+
+.userCard__btns__gap {
+    gap: 1rem;
+}
+
+.btn__gap {
+    gap: .5rem;
+}
