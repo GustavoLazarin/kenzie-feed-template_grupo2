@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useUserContext } from "../../providers/UserContext";
 import Logo from "../../assets/KenzieFeed-Logo.svg";
 import { BiExit } from "react-icons/bi";
@@ -6,14 +6,17 @@ import { BiExit } from "react-icons/bi";
 export const Header = () => {
   const { logOut } = useUserContext();
   const token = localStorage.getItem("@TOKEN");
+  const user = JSON.parse(localStorage.getItem("@USER"));
+
+  const navigate = useNavigate();
 
   return (
     <header>
       <div className="header">
-        <img src={Logo} alt="KZ-logo" />
+        <img src={Logo} alt="KZ-logo" onClick={() => navigate("/")}/>
         {token ? (
           <div className="header__user">
-            <button className="btn btn__primary btn__small">Usuário</button>
+            <button className="btn btn__primary btn__small">{user.name[0].toUpperCase()}</button>
             <Link className="btn btn__secondary btn__small" to="/dashboard">
               Dashboard
             </Link>
