@@ -14,6 +14,10 @@
 
   @include padding-inline($p:1rem);
 
+  img {
+    cursor: pointer;
+  }
+
   a {
     display: block;
     font-weight: var(--bold)
@@ -22,5 +26,9 @@
   .header__user {
     @extend .flex;
     @include gap($g: 1rem);
+
+    & > :first-child {
+      border-radius: 50%;
+    }
   }
 }
