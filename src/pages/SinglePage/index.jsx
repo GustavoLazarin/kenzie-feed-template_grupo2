@@ -53,7 +53,7 @@ export const SinglePage = () => {
 					<h1 className="heading-3">{singlePost.title}</h1>
 					</div>
 					<img src={singlePost.image} alt="" />
-					<div className="flex justify-content-center align-items-center like-gap">
+					<div className="flex  align-items-center like-gap">
             {likeId ? 
              <RxHeartFilled className="liked" onClick={() => unlikePost(likeId)} size={22}/> 
                : <RxHeart className="color-blue" onClick={() => likePost(id)} size={22}/> }
