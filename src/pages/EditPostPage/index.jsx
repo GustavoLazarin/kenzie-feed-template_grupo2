@@ -1,8 +1,10 @@
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import { EditForm } from "../../components/forms/EditForm";
+import { useNewsContext } from "../../providers/NewsContext";
 
 export const EditPostPage = () => {
     const navigate = useNavigate()
+    const { editingPost } = useNewsContext()
 
     return (
         <>
@@ -13,7 +15,7 @@ export const EditPostPage = () => {
                 </div>  
 
                 <div>
-                    <EditForm/>
+                 {editingPost?<EditForm/>: <Navigate to="/dashboard"/>}
                 </div>
             </main>
         </>
