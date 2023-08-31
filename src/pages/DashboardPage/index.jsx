@@ -15,13 +15,14 @@ export const DashboardPage = () => {
     }, [])
 
   return (
-    <div className="content">
-      <main className="w-full bg-grey grid justify-items-center">
-        <section className="padding-b-24 min-w-full overall-max-width grid justify-items-center stack-large">
-          <div className="dashboard__heading">
+    <div className="content bg-grey">
+      <main className="w-full padding-b-24 bg-grey grid justify-items-center ">
+        <section className=" min-w-full overall-max-width grid justify-items-center stack-large">
+          <div className="min-w-full overall-max-width align-items-center grid grid-heading">
             <h1 className="heading-3 justify-self-start">Suas Publicações</h1>
             <button
-              className="btn justify-content-center flex align-items-center btn__primary  btn__max-width btn__newPost-gap "
+            
+              className=" btn btn__primary btn__small justify-content-center flex align-items-center btn__max-width "
               onClick={() => setIsCreating(true)}
             >
               <MdAddCircleOutline />
