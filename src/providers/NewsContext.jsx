@@ -138,9 +138,7 @@ export const NewsProvider = ({ children }) => {
 			toast.success("Post curtido com sucesso");
 		} catch (error) {
 			// Haverá erro caso o token tenha expirado / o usuário não esteja logado
-			navigate("/login");
-			toast.error("Você precisa estar logado para dar like em um post");
-			console.log(error);
+			toast.error("Você precisa estar logado para curtir uma publicação");
 		}
 	};
 
@@ -168,11 +166,13 @@ export const NewsProvider = ({ children }) => {
 		const userInfo = JSON.parse(localStorage.getItem("@USER"));
 		setLikeId(null);
 
-		singlePost?.likes?.forEach(likeInfo => {
-			if (likeInfo.userId === userInfo.id) {
-				setLikeId(likeInfo.id);
-			}
-		});
+		if (userInfo) {
+			singlePost?.likes?.forEach(likeInfo => {
+				if (likeInfo.userId === userInfo.id) {
+					setLikeId(likeInfo.id);
+				}
+			});
+		}
 	};
 
 	return (
