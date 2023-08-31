@@ -8,8 +8,8 @@ export const HomePage = () => {
   const newPostsList = posts.slice(0, 4);
 
   return (
-    <div className="everything">
-      <main className="content overall-max-width">
+    <>
+      <main className="content">
           <section className="min-w-full stack-large">
             <h3 className="min-w-full bold text-align-center">KENZIE FEED</h3>
             <h1 className="heading-2">Seja muito bem vindo ao KenzieFeed</h1>
@@ -20,10 +20,10 @@ export const HomePage = () => {
             </div>
           </section>
           <section className="min-w-full stack-x-large">
-            <div className="stack-2x-large grid justify-items-center">
+            <div className="stack-2x-large">
               <img src={homeImg} alt="Kenzie Feed image" />
-              <div className="dashboard__heading">
-                <h2 className="heading-2 justify-self-start">Últimas notícias</h2>
+              <div className="flex align-items-center space-between">
+                <h2 className="heading-2">Últimas notícias</h2>
                 <Link
                   className="btn__max-width btn__register btn btn__primary btn__small"
                   to={"/news"}
@@ -35,6 +35,6 @@ export const HomePage = () => {
             <NewsList newPosts={newPostsList} />
           </section>
       </main>
-    </div>
+    </>
   );
 };

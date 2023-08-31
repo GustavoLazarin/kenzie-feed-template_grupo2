@@ -3,11 +3,6 @@
 @import "./sizing.scss";
 @import "./flex.scss";
 
-.btn__max-width {
-  max-width: 7.5rem;
-
-}
-
 @mixin transition($i: var(--color-blue), $f: var(--color-blue-hover)) {
   transition: background-color 300ms;
   background-color: $i;
@@ -72,7 +67,10 @@ a {
   color: var(--color-blue);
 }
 
+.btn__max-width {
+  max-width: 7.5rem;
 
+}
 
 //  cadastre-se | leia mais (pode ser um button ou um link)
 .btn__tertiary {

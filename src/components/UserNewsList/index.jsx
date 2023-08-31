@@ -6,7 +6,7 @@ export const UserNewsList = () => {
     const {ownPosts} = useNewsContext();    
 
     return (
-        <ul className="padding-b-32 w-full overall-max-width grid align-items-center justify-items-center news-gap">
+        <ul>
             {ownPosts.map(post => (<UserNewsCard key={post.id} post={post}/>))}
         </ul>
     )

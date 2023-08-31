@@ -4,31 +4,15 @@
 
 @import "./padding.scss";
 @import "./margin.scss";
-@import "./sizing.scss";
-@import "./grid.scss";
-@import "./flex.scss";
-
-header {
-  @extend .grid;
-  @extend .justify-items-center;
-  grid-template-columns: 1fr auto;
-}
 
 .header {
-  @extend .w-full;
-  @extend .overall-max-width;
   @extend .flex;
   @extend .space-between;
   @extend .align-items-center;
 
   @include margin-block($m: var(--s2));
 
-  
   @include padding-inline($p:1rem);
-
-  @media (min-width: var(--overall-max-width)) {
-    padding-inline: 0;
-  }
 
   a {
     display: block;

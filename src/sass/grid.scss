@@ -35,19 +35,6 @@
   }
 }
 
-.dashboard__heading {
-
-  @extend .w-full;
-  @extend .overall-max-width;
-  @extend .grid;
-
-  grid-template-columns: 1fr auto;
-}
-
-.justify-self-start {
-  justify-self: baseline;
-}
-
 .grid-lg {
   @media (min-width: 950px) {
     grid-template-columns: 1fr 1fr;
@@ -58,7 +45,7 @@
 .grid-news {
   @media (min-width: 950px) {
     grid-template-columns: 47% 47%;
-    row-gap: 2rem;
+    row-gap: 6%;
     column-gap: 1.125rem;
   }
 }
