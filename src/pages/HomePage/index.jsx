@@ -12,7 +12,7 @@ export const HomePage = () => {
   return (
     <div className="everything">
       <Header />
-      <main className="content">
+      <main className="content overall-max-width">
         {/* <div className="container__home"> */}
           <section className="min-w-full stack-large">
             <h3 className="min-w-full bold text-align-center">KENZIE FEED</h3>
@@ -24,10 +24,10 @@ export const HomePage = () => {
             </div>
           </section>
           <section className="min-w-full stack-x-large">
-            <div className="stack-2x-large">
+            <div className="stack-2x-large grid justify-items-center">
               <img src={homeImg} alt="Kenzie Feed image" />
-              <div className="flex align-items-center space-between">
-                <h2 className="heading-2">Últimas notícias</h2>
+              <div className="dashboard__heading">
+                <h2 className="heading-2 justify-self-start">Últimas notícias</h2>
                 <Link
                   className="btn__max-width btn__register btn btn__primary btn__small"
                   to={"/news"}
