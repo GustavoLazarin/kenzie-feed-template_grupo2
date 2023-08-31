@@ -45,13 +45,17 @@ export const SinglePage = () => {
 
 	return (
 		<>
-			<main>
-				<article>
-					<span>Por: {singlePost.owner}</span>
-					<h2>{singlePost.title}</h2>
+			<main className="stack-2x-large">
+				<article className="padding-i-24 stack-large overall-max-width">
+					<div className="grid">
+
+					<span className="min-w-full text-align-center">Por: {singlePost.owner}</span>
+					<h1 className="heading-3">{singlePost.title}</h1>
+					</div>
 					<img src={singlePost.image} alt="" />
-					<div>
+					<div className="flex justify-content-center align-items-center like-gap">
 						<RxHeart
+						className="color-blue"
 							onClick={() =>
 								likeId === null ? likePost(id) : unlikePost(likeId)
 							}
@@ -65,10 +69,10 @@ export const SinglePage = () => {
 							</span>
 						)}
 					</div>
-					<p>{singlePost.description}</p>
+					<p className="paragraph-large">{singlePost.description}</p>
 				</article>
-				<section>
-					<h1>Leia também</h1>
+				<section className="padding-i-24 min-w-full stack-large">
+					<h2 className="post-title">Leia também</h2>
 					<NewsList newPosts={newPosts} />
 				</section>
 			</main>
