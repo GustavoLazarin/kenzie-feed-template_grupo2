@@ -18,6 +18,8 @@ export const SinglePage = () => {
 		checkLikePost,
 	} = useNewsContext();
 
+	const userInfo = localStorage.getItem("@USER");
+
 	let amountPosts = 0;
 	const newPosts = posts.filter(post => {
 		if (post.id !== singlePost.id && amountPosts < 2) {
@@ -51,9 +53,7 @@ export const SinglePage = () => {
 					<div>
 						<RxHeart
 							onClick={() =>
-								singlePost.likes !== undefined && likeId === null
-									? likePost(id)
-									: unlikePost(likeId)
+								likeId === null ? likePost(id) : unlikePost(likeId)
 							}
 						/>
 						{singlePost.likes?.length === 0 ? (
