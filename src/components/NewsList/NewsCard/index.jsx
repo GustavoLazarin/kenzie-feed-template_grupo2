@@ -7,7 +7,7 @@ export const NewsCard = ({ post }) => {
   return (
     <li className="stack-large w-full">
       <img className="w-full" src={post.image} alt={post.title} />
-      <div className="stack-medium">
+      <div className="stack-medium grid">
         <span className="author">Por: {post.owner}</span>
         <h3 className="post-title">{post.title}</h3>
 		<div>

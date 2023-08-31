@@ -14,12 +14,17 @@
   height: 100dvh;
 }
 
+.overall-max-width {
+  max-width: var(--overall-max-width);
+}
+
+
 .content,
 header,
 footer {
   @include padding-inline($p: 1rem);
-  max-width: 1050px;
   @extend .w-full;
+  
 }
 
 .content {
