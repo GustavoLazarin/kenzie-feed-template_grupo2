@@ -14,7 +14,7 @@
   --s5: calc(var(--s4) * var(--ratio));
 
   // tamanho máximo para quebrar linha
-  --measure: 60ch;
+  --measure: 75ch;
 
   --color-black: #000000;
   --color-white: #ffffff;
@@ -48,6 +48,7 @@
   --input-large: 1.25rem;
   --input-normal: 1rem;
 
+  --paragraph-large: 1.25rem;
   --paragraph: 1.125rem;
   --paragraph-mobile: 1rem;
 
