@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { NewsList } from "../../components/NewsList";
 import { useParams } from "react-router-dom";
 import { api } from "../../services/api";
-import { RxHeart } from "react-icons/rx";
+import { RxHeart, RxHeartFilled } from "react-icons/rx";
 import { useNewsContext } from "../../providers/NewsContext";
 
 export const SinglePage = () => {
@@ -54,12 +54,10 @@ export const SinglePage = () => {
 					</div>
 					<img src={singlePost.image} alt="" />
 					<div className="flex justify-content-center align-items-center like-gap">
-						<RxHeart
-						className="color-blue"
-							onClick={() =>
-								likeId === null ? likePost(id) : unlikePost(likeId)
-							}
-						/>
+            {likeId ? 
+             <RxHeartFilled className="liked" onClick={() => unlikePost(likeId)} size={22}/> 
+               : <RxHeart className="color-blue" onClick={() => likePost(id)} size={22}/> }
+						
 						{singlePost.likes?.length === 0 ? (
 							"Seja o primeiro a curtir esse post"
 						) : (
