@@ -5,7 +5,9 @@ export const DefaultTemplate = () => {
   return (
     <>
       <Header />
-      <main></main>
+      <main>
+        
+      </main>
       <Footer />
     </>
   );

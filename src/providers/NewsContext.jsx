@@ -28,8 +28,9 @@ export const NewsProvider = ({ children }) => {
     const getOwnPosts = async () => {
         const user = localStorage.getItem("@USER")
         try {
-            const { data } = await api.get(`/posts/?${user.name}`)
-            setOwnPosts(data)
+            const {data} = await api.get(`/posts/?userId=${user.id}`);
+            setOwnPosts(data);
+  
         } catch (error) {
             console.log(error)
         }
