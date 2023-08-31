@@ -3,10 +3,10 @@
 @import "./position.scss";
 @import "./padding.scss";
 @import "./container.scss";
+@import "./stack.scss";
 
 .modal {
   inset: 0;
-  background: rgba(0, 0, 0, 0.7);
   @extend .fixed;
   @extend .grid;
   @extend .justify-items-center;
@@ -16,9 +16,20 @@
 .dialog__overlay {
   @extend .modal;
 
+  
+  
+  background-color: var(--color-blue-modal);
+  
   .dialog__container {
+    @include padding-block($p: var(--s1));
+    background-color: var(--color-white);
+
+    @extend .grid;
+    @extend .stack-medium;
+
+
     width: 90dvw;
-    max-width: 25rem;
+    max-width: calc(var(--overall-max-width)*.8);
 
     border-radius: var(--large-radius);
     @extend .grid;
@@ -30,10 +41,10 @@
 
     //   nome do Modal e o "X" pra sair
     .container__top {
-      border-start-end-radius: 0.5rem;
-      border-start-start-radius: 0.5rem;
+      border-start-end-radius: 0.25rem;
+      border-start-start-radius: 0.25rem;
 
-      @include padding($p: var(--s1));
+      @include padding-inline($p: var(--s1));
       @extend .flex;
       @extend .space-between;
       @include padding-block($p: var(--s1));

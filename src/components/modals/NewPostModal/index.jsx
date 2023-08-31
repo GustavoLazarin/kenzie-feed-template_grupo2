@@ -14,9 +14,11 @@ export const NewPostModal = () => {
         <div ref={ref} className="dialog__overlay" role="dialog">
             <div className="dialog__container">
                 <div className="container__top">
-                    <h2>Novo post</h2>
-                    <button onClick={() => setIsCreating(false)}>
-                        <MdClose />
+                    <h2 className="post-title">Novo post</h2>
+                    <button
+                    className="bg-white" 
+                    onClick={() => setIsCreating(false)}>
+                        <MdClose size={28}/>
                     </button>
                 </div>
                 <NewPostForm />
