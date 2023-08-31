@@ -1,19 +1,15 @@
-import { Footer } from "../../components/Footer";
 import homeImg from "../../assets/homeImg.svg";
 import { Link } from "react-router-dom";
 import { NewsList } from "../../components/NewsList";
 import { useNewsContext } from "../../providers/NewsContext";
-import { Header } from "../../components/Header";
 
 export const HomePage = () => {
   const { posts } = useNewsContext();
   const newPostsList = posts.slice(0, 4);
 
   return (
-    <div className="everything">
-      <Header />
+    <>
       <main className="content">
-        {/* <div className="container__home"> */}
           <section className="min-w-full stack-large">
             <h3 className="min-w-full bold text-align-center">KENZIE FEED</h3>
             <h1 className="heading-2">Seja muito bem vindo ao KenzieFeed</h1>
@@ -38,9 +34,7 @@ export const HomePage = () => {
             </div>
             <NewsList newPosts={newPostsList} />
           </section>
-        {/* </div> */}
       </main>
-      <Footer />
-    </div>
+    </>
   );
 };
