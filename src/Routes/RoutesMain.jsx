@@ -13,13 +13,13 @@ export const RoutesMain = () => {
 	return (
 		<Routes>
 			<Route element={<PublicRoutes />}>
-				<Route path="/news" element={<AllNewsPage />} />
-				<Route path="/news/:id" element={<SinglePage />} />
 				<Route path="/login" element={<LoginPage />} />
 				<Route path="/register" element={<RegisterPage />} />
 			</Route>
 
 			<Route path="/" element={<HomePage />} />
+			<Route path="/news" element={<AllNewsPage />} />
+			<Route path="/news/:id" element={<SinglePage />} />
 
 			<Route element={<PrivateRoutes />}>
 				<Route path="/dashboard" element={<DashboardPage />} />
