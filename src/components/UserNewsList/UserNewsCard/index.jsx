@@ -4,7 +4,7 @@ import { useNewsContext } from "../../../providers/NewsContext"
 
 export const UserNewsCard = ({post}) => {
     const navigate = useNavigate()
-    const { setEditingPost, deletePost} = useNewsContext();
+    const { setEditingPost, deletePost } = useNewsContext();
 
     const editBttn = (post)=>{
         setEditingPost(post);
