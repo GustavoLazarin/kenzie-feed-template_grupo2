@@ -19,8 +19,8 @@ export const UserNewsCard = ({post}) => {
             </div>
                 <h3 className="bold">{post.title}</h3>
             <div className="flex userCard__btns__gap ">
-                <button className="btn color-blue" onClick={()=>editBttn(post)}><MdOutlineEdit size={30}/></button>
-                <button className="btn color-blue" onClick={()=>deletePost(post.id)} ><MdDeleteOutline size={30}/></button>
+                <button className="btn bg-grey color-blue" onClick={()=>editBttn(post)}><MdOutlineEdit size={30}/></button>
+                <button className="btn bg-grey color-blue" onClick={()=>deletePost(post.id)} ><MdDeleteOutline size={30}/></button>
             </div>
         </li>
     )
