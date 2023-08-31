@@ -12,12 +12,14 @@ export const UserNewsCard = ({post}) => {
     }
 
     return (
-        <li className="userCard">
+        <li>
+            <div>
                 <img src={post.image} alt="Imagem da notícia."/>
-                <h3 className="bold news-title">{post.title}</h3>
-            <div className="flex">
-                <button className="btn color-blue " onClick={()=>editBttn(post)}><MdOutlineEdit size={30}/></button>
-                <button className="btn color-blue " onClick={()=>deletePost(post.id)} ><MdDeleteOutline size={30}/></button>
+                <h3>{post.title}</h3>
+            </div>
+            <div>
+                <button onClick={()=>editBttn(post)}><MdOutlineEdit/></button>
+                <button onClick={()=>deletePost(post.id)} ><MdDeleteOutline/></button>
             </div>
         </li>
     )
