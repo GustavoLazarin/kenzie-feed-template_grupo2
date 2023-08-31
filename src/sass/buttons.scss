@@ -54,7 +54,6 @@ a {
 .btn__primary {
   @include transition;
   color: var(--color-white);
-  outline: var(--border-thickness) var(--color-blue);
 }
 
 //  botão branco (dashboard | voltar)
