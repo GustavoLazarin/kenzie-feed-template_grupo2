@@ -11,12 +11,14 @@ export const NewPostModal = () => {
     useKeyDown("Escape", () => setIsCreating(false))
 
     return (
-        <div ref={ref} className="modalOverlay">
-            <div className="modalBox">
-                <h2>Novo post</h2>
-                <button onClick={() => setIsCreating(false)}>
-                    <MdClose />
-                </button>
+        <div ref={ref} className="dialog__overlay" role="dialog">
+            <div className="dialog__container">
+                <div className="container__top">
+                    <h2>Novo post</h2>
+                    <button onClick={() => setIsCreating(false)}>
+                        <MdClose />
+                    </button>
+                </div>
                 <NewPostForm />
             </div>
         </div>

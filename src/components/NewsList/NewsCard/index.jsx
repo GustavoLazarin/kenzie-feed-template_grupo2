@@ -16,12 +16,14 @@ export const NewsCard = ({ post }) => {
                     <Link
                         className="btn__tertiary"
                         to={`/news/${post.id}`}
-                        onClick={() => setSinglePost(post)}
+                        onClick={() => {setSinglePost(post);
+							window.scrollTo(0, 0);}}
                     >
                         Leia mais
                     </Link>
                 </div>
             </div>
         </li>
-    )
-}
+    );
+};
+
