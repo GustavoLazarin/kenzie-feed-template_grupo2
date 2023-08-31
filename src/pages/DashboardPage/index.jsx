@@ -13,7 +13,7 @@ export const DashboardPage = () => {
   }, []);
 
   return (
-    <div className="everything">
+    <div className="content">
       <main className="w-full bg-grey grid justify-items-center">
         <section className="padding-b-24 min-w-full overall-max-width grid justify-items-center stack-large">
           <div className="dashboard__heading">
