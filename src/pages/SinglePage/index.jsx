@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { NewsList } from "../../components/NewsList";
 import { useParams } from "react-router-dom";
 import { api } from "../../services/api";
-import { RxHeart } from "react-icons/rx";
+import { RxHeart, RxHeartFilled } from "react-icons/rx";
 import { useNewsContext } from "../../providers/NewsContext";
 
 export const SinglePage = () => {
@@ -51,11 +51,7 @@ export const SinglePage = () => {
 					<h2>{singlePost.title}</h2>
 					<img src={singlePost.image} alt="" />
 					<div>
-						<RxHeart
-							onClick={() =>
-								likeId === null ? likePost(id) : unlikePost(likeId)
-							}
-						/>
+						{likeId ? <RxHeartFilled className="liked" onClick={() => unlikePost(likeId)} size={22}/> : <RxHeart className="unliked" onClick={() => likePost(id)} size={22}/> }
 						{singlePost.likes?.length === 0 ? (
 							"Seja o primeiro a curtir esse post"
 						) : (

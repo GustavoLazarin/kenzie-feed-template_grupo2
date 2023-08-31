@@ -1,0 +1,41 @@
+.liked {
+    animation: like ease .6s;
+    color: var(--color-danger);
+}
+
+.unliked {
+    animation: unlike .6s;
+}
+
+@keyframes like {
+    0%{
+        transform: scale(0.3);
+        rotate: 0deg;
+    }
+    25%{
+        rotate: -20deg;
+    }
+    50%{
+        transform: scale(1.2);
+        rotate: 20deg;
+    }
+    75%{
+        rotate: -20deg;
+    }
+    100%{
+        transform: scale(1);
+        rotate: 0deg;
+    }
+}
+
+@keyframes unlike {
+    0%{
+        transform: scale(1.2);
+    }
+    50%{
+        transform: scale(0.6);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
