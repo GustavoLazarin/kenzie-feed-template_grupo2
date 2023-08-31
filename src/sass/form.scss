@@ -13,7 +13,8 @@ form {
 
   @extend .w-full;
 
-  input {
+  input, textarea {
+    @extend .input-large;
     @include padding-inline($p: 1.5rem);
     @extend .min-w-full;
     @extend .w-full;
@@ -35,9 +36,6 @@ form {
     }
   }
 
-  button {
-    @extend .min-w-full;
-  }
 }
 
 .input-large {
