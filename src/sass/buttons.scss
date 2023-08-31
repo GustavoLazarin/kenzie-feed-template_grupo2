@@ -62,9 +62,14 @@ a {
 
   border: var(--border-thickness) var(--color-blue);
 
+  @extend .btn__max-width;
+  
+  color: var(--color-blue);
+}
+
+.btn__max-width {
   max-width: 7.5rem;
 
-  color: var(--color-blue);
 }
 
 //  cadastre-se | leia mais (pode ser um button ou um link)
