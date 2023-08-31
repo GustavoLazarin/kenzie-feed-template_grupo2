@@ -15,8 +15,7 @@ export const DashboardPage = () => {
     }, [])
 
     return (
-        <div>
-            <Header />
+        <main>
             <section>
                 <div>
                     <h2>Suas Publicações</h2>
@@ -27,8 +26,7 @@ export const DashboardPage = () => {
                 </div>
                 <UserNewsList />
             </section>
-            <Footer />
             {isCreating ? <NewPostModal /> : null}
-        </div>
+        </main>
     )
 }

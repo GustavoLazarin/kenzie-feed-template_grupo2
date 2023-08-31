@@ -1,13 +1,10 @@
 import { Link } from "react-router-dom";
-import { Footer } from "../../components/Footer";
 import { RegisterForm } from "../../components/forms/RegisterForm";
-import { Header } from "../../components/Header";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 
 export const RegisterPage = () => {
   return (
-    <div className="everything">
-      <Header />
+    <>
       <main className="content relative ">
         <Link
           className="top-0 left-5 absolute grid-btn__back grid align-items-center justify-items-center  color-blue btn btn__small btn__secondary"
@@ -27,7 +24,6 @@ export const RegisterPage = () => {
         <RegisterForm />
         </div>
       </main>
-      <Footer />
-    </div>
+    </>
   );
 };

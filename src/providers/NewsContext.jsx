@@ -38,7 +38,7 @@ export const NewsProvider = ({ children }) => {
 
     //função request de edição do post
     const editPost = async (formData) => {
-        const token = localStorage.getItem("@TOKEN")
+        const token = localStorage.getItem("@TOKEN");
         try {
             const { data } = await api.put(
                 `/posts/${editingPost.id}`,

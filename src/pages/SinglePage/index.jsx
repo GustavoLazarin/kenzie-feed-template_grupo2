@@ -1,12 +1,9 @@
-import { useEffect, useState } from "react";
-import { Footer } from "../../components/Footer";
-
+import { useEffect } from "react";
 import { NewsList } from "../../components/NewsList";
 import { useParams } from "react-router-dom";
 import { api } from "../../services/api";
 import { RxHeart } from "react-icons/rx";
 import { useNewsContext } from "../../providers/NewsContext";
-import { Header } from "../../components/Header";
 
 
 export const SinglePage = () => {
@@ -37,7 +34,6 @@ export const SinglePage = () => {
 
 	return (
 		<>
-			<Header />
 			<main>
 				<article>
 					<span>Por: {singlePost.owner}</span>
@@ -61,7 +57,6 @@ export const SinglePage = () => {
 					<NewsList newPosts={newPosts} />
 				</section>
 			</main>
-			<Footer />
 		</>
 	);
 };

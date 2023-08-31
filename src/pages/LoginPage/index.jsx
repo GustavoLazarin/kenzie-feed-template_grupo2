@@ -1,13 +1,10 @@
-import { Footer } from "../../components/Footer";
-import { Header } from "../../components/Header";
 import loginImg from "../../assets/loginImg.svg";
 import { Link } from "react-router-dom";
 import { LoginForm } from "../../components/forms/LoginForm";
 
 export const LoginPage = () => {
   return (
-    <div className="everything">
-      <Header />
+    <>
       <main className="content content-large-screen">
         <picture>
           <img src={loginImg} alt="Imagem de login" />
@@ -31,7 +28,6 @@ export const LoginPage = () => {
           </div>
         </div>
       </main>
-      <Footer />
-    </div>
+    </>
   );
 };

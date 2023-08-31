@@ -1,14 +1,12 @@
 import { Footer } from "../Footer";
 import { Header } from "../Header";
 
-export const DefaultTemplate = () => {
+export const DefaultTemplate = ({children}) => {
   return (
-    <>
+    <div className="everything">
       <Header />
-      <main>
-        
-      </main>
+      {children}
       <Footer />
-    </>
+    </div>
   );
 };
