@@ -1,6 +1,25 @@
-// qq coisa só pra não quebrar
+@import "./padding.scss";
+@import "./sizing.scss";
+@import "./flex.scss";
+@import "./stack.scss";
+// @import "./grid.scss";
+
+
 .cards {
   display: inline-flex;
+}
+
+.container__home {
+  max-width: 75rem;
+  @extend .grid;
+  @extend .justify-items-center;
+  @extend .w-full;
+}
+
+.card {
+  // max-width: 480px;
+  // @extend .stack-large;
+  // @extend .w-full;
 }
 
 .card {

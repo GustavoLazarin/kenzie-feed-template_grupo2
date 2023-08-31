@@ -42,6 +42,13 @@
     column-gap: 1.125rem;
   }
 }
+.grid-news {
+  @media (min-width: 950px) {
+    grid-template-columns: 47% 47%;
+    row-gap: 6%;
+    column-gap: 1.125rem;
+  }
+}
 
 .grid-col-2 {
   @media (min-width: 750px) {

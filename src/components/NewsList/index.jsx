@@ -2,7 +2,7 @@ import { NewsCard } from "./NewsCard"
 
 export const NewsList = ({ newPosts }) => {
     return (
-        <ul className="grid justify-items-center register__form__lg news-gap">
+        <ul className="w-full grid grid-news justify-items-center news-gap">
             {newPosts.map((post) => (
                 <NewsCard key={post.id} post={post} />
             ))}

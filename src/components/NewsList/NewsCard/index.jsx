@@ -5,7 +5,7 @@ export const NewsCard = ({ post }) => {
 	const { setSinglePost } = useNewsContext();
 
   return (
-    <li className="stack-large">
+    <li className="stack-large w-full">
       <img className="w-full" src={post.image} alt={post.title} />
       <div className="stack-medium">
         <span className="author">Por: {post.owner}</span>
