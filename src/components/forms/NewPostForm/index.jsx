@@ -22,7 +22,7 @@ export const NewPostForm = () => {
     }
 
     return (
-        <form onSubmit={handleSubmit(submit)}>
+        <form className="grid  padding-block-24 stack-large" onSubmit={handleSubmit(submit)}>
             <Input
                 placeholder="Título"
                 {...register("title")}
@@ -38,7 +38,8 @@ export const NewPostForm = () => {
                 {...register("description")}
                 error={errors.description}
             />
-            <button type="submit">Criar post</button>
+
+            <button className="btn btn__primary btn__small btn__max-width justify-self-end" type="submit">Criar post</button>
         </form>
     )
 }
