@@ -16,7 +16,7 @@ footer,
   font-family: var(--font-sans-serif);
 }
 
-span {
+.color-red {
   color: rgba(255, 0, 0, 0.866);
 }
 
@@ -62,12 +62,13 @@ h1 {
   font-weight: var(--bold);
 
   font-size: clamp(var(--title-post-mobile), 2vw, var(--title-post));
+  
+}
+.paragraph-large {
+  font-size: clamp(var(--paragraph), 2vw, var(--paragraph-large));
+  line-height: 150%;
+  line-break: auto;
 
-  // font-size: var(--title-post-mobile);
-
-  // @media (min-width: 750px) {
-  //   font-size: var(--title-post);
-  // }
 }
 
 .news-title {

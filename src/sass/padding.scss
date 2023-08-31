@@ -12,6 +12,9 @@
   padding-inline: 0;
 }
 .padding-i-24 {
+  padding-inline: clamp(.5rem, 4%,2rem);
+}
+.padding-i-s-24 {
   padding-inline-start: 1.5rem;
 }
 
