@@ -5,7 +5,7 @@ export const InputPassword = forwardRef(({label, id, error, ...rest}, ref) => {
     <div>
       {label ? <label htmlFor={id}>{label}</label> : null}
       <input className="input-large" ref={ref} type="password" id={id} {...rest}/>
-      {error ? <span className="padding-i-24">{error.message}</span> : null}
+      {error ? <span className="color-red padding-i-s-24">{error.message}</span> : null}
     </div>
   );
 });
