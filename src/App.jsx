@@ -8,7 +8,6 @@ function App() {
             <RoutesMain />
             <ToastContainer
                 position="bottom-right"
-                theme="dark"
                 autoClose={2 * 1000}
             />
         </div>

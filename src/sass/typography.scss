@@ -60,9 +60,12 @@ h1 {
 .post-title {
   line-height: 120%;
   font-weight: var(--bold);
-  font-size: var(--title-post-mobile);
 
-  @media (min-width: 750px) {
-    font-size: var(--title-post);
-  }
+  font-size: clamp(var(--title-post-mobile), 2vw, var(--title-post));
+
+  // font-size: var(--title-post-mobile);
+
+  // @media (min-width: 750px) {
+  //   font-size: var(--title-post);
+  // }
 }
