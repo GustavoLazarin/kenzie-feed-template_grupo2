@@ -19,7 +19,6 @@ a {
 
 .btn {
   @extend .w-full;
-  max-width: var(--input-max-width);
 
   font-weight: var(--bold);
 

@@ -12,14 +12,15 @@ export const UserNewsCard = ({post}) => {
     }
 
     return (
-        <li>
-            <div>
+        <li className="userCard">
+            <div className="post-image">
+
                 <img src={post.image} alt="Imagem da notícia."/>
-                <h3>{post.title}</h3>
             </div>
-            <div>
-                <button onClick={()=>editBttn(post)}><MdOutlineEdit/></button>
-                <button onClick={()=>deletePost(post.id)} ><MdDeleteOutline/></button>
+                <h3 className="bold">{post.title}</h3>
+            <div className="flex userCard__btns__gap ">
+                <button className="btn color-blue" onClick={()=>editBttn(post)}><MdOutlineEdit size={30}/></button>
+                <button className="btn color-blue" onClick={()=>deletePost(post.id)} ><MdDeleteOutline size={30}/></button>
             </div>
         </li>
     )

@@ -5,7 +5,7 @@ import { LoginForm } from "../../components/forms/LoginForm";
 export const LoginPage = () => {
   return (
     <>
-      <main className="content content-large-screen">
+      <main className="content content-large-screen overall-max-width">
         <picture>
           <img src={loginImg} alt="Imagem de login" />
         </picture>

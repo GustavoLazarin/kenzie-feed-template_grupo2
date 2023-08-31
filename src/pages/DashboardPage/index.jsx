@@ -12,19 +12,25 @@ export const DashboardPage = () => {
         getOwnPosts() //Faz uma requisição GET nos posts do usuário
     }, [])
 
-    return (
-        <main>
-            <section>
-                <div>
-                    <h2>Suas Publicações</h2>
-                    <button onClick={() => setIsCreating(true)}>
-                        <MdAddCircleOutline />
-                        Novo Post
-                    </button>
-                </div>
-                <UserNewsList />
-            </section>
-            {isCreating ? <NewPostModal /> : null}
-        </main>
-    )
-}
+  return (
+    <div className="content bg-grey">
+      <main className="w-full padding-b-24 bg-grey grid justify-items-center ">
+        <section className=" min-w-full overall-max-width grid justify-items-center stack-large">
+          <div className="min-w-full overall-max-width align-items-center grid grid-heading">
+            <h1 className="heading-3 justify-self-start">Suas Publicações</h1>
+            <button
+            
+              className=" btn btn__primary btn__small justify-content-center flex align-items-center btn__max-width "
+              onClick={() => setIsCreating(true)}
+            >
+              <MdAddCircleOutline />
+              Novo Post
+            </button>
+          </div>
+          <UserNewsList />
+        </section>
+      </main>
+      {isCreating ? <NewPostModal /> : null}
+    </div>
+  );
+};
