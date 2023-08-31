@@ -1,22 +1,23 @@
+import { Navigate, useNavigate } from "react-router-dom";
 import { EditForm } from "../../components/forms/EditForm";
-import { Header } from "../../components/Header";
-import { Footer } from "../../components/Footer";
+import { useNewsContext } from "../../providers/NewsContext";
 
 export const EditPostPage = () => {
+    const navigate = useNavigate()
+    const { editingPost } = useNewsContext()
+
     return (
-        <div>
-            <Header/>
+        <>
             <main>
               <div>
                 <h1>Editando:</h1>
-                <button>Voltar</button>
+                <button onClick={()=>navigate("/dashboard")}>Voltar</button>
                 </div>  
 
                 <div>
-                    <EditForm/>
+                 {editingPost?<EditForm/>: <Navigate to="/dashboard"/>}
                 </div>
             </main>
-            <Footer/>
-        </div>
+        </>
     )
 }

@@ -26,10 +26,11 @@ export const NewsProvider = ({ children }) => {
     }, [])
 
     const getOwnPosts = async () => {
-        const user = localStorage.getItem("@USER")
+        const user = JSON.parse(localStorage.getItem("@USER"));
         try {
-            const { data } = await api.get(`/posts/?${user.name}`)
-            setOwnPosts(data)
+            const {data} = await api.get(`/posts/?userId=${user.id}`);
+            setOwnPosts(data);
+  
         } catch (error) {
             console.log(error)
         }
@@ -37,7 +38,7 @@ export const NewsProvider = ({ children }) => {
 
     //função request de edição do post
     const editPost = async (formData) => {
-        const token = localStorage.getItem("@TOKEN")
+        const token = localStorage.getItem("@TOKEN");
         try {
             const { data } = await api.put(
                 `/posts/${editingPost.id}`,

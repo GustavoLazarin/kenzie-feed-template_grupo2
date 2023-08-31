@@ -1,6 +1,4 @@
 import { useEffect } from "react";
-import { Header } from "../../components/Header";
-import { Footer } from "../../components/Footer";
 import { UserNewsList } from "../../components/UserNewsList";
 import { MdAddCircleOutline } from "react-icons/md";
 import { useNewsContext } from "../../providers/NewsContext";
@@ -16,9 +14,8 @@ export const DashboardPage = () => {
 
   return (
     <div className="everything">
-      <Header />
       <main className="w-full bg-grey grid justify-items-center">
-        <div className="padding-b-24 min-w-full overall-max-width grid justify-items-center stack-large">
+        <section className="padding-b-24 min-w-full overall-max-width grid justify-items-center stack-large">
           <div className="dashboard__heading">
             <h1 className="heading-3 justify-self-start">Suas Publicações</h1>
             <button
@@ -30,9 +27,8 @@ export const DashboardPage = () => {
             </button>
           </div>
           <UserNewsList />
-        </div>
+        </section>
       </main>
-      <Footer />
       {isCreating ? <NewPostModal /> : null}
     </div>
   );
