@@ -13,7 +13,7 @@ export const Header = () => {
   return (
     <header>
       <div className="header">
-        <button onClick={() => navigate("/")} aria-aria-label="return-Home" title="Retornar para Home" >
+        <button onClick={() => navigate("/")} aria-label="return-Home" title="Retornar para Home" >
           <img src={Logo} alt="KZ-logo"  />
         </button>
         {token ? (
