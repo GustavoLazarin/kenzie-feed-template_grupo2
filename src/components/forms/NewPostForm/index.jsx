@@ -41,7 +41,7 @@ export const NewPostForm = () => {
       />
 
       <button  className="btn btn__primary btn__small btn__max-width justify-self-end" type="submit">
-        {isLoading ? <div className="custom-loader"></div> : "Entrar"}
+        {isLoading ? <div className="custom-loader"></div> : "Criar Post"}
       </button>
     </form>
   );
