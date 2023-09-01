@@ -44,3 +44,24 @@
     transform: scale(1);
   }
 }
+
+@keyframes skeleton {
+  0% {
+    opacity: 1;
+    transform: scale(1)
+  }
+  25% {
+    transform: scale(1.01)
+  }
+  50% {
+    opacity: .7;
+    transform: scale(1)
+  }
+  75% {
+    transform: scale(.99);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
