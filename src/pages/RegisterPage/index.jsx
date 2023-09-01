@@ -13,6 +13,8 @@ export const RegisterPage = () => {
         <Link
           className="like-gap justify-self-start grid grid-btn__back align-items-center justify-items-center  btn btn__small btn__secondary"
           to="/login"
+          aria-label="back"
+          title="voltar"
         >
           <AiOutlineArrowLeft size={21} />
           Voltar
