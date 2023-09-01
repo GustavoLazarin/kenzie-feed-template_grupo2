@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { api } from "../services/api";
@@ -20,7 +20,7 @@ export const UserProvider = ({ children }) => {
       navigate("/login");
     } catch (error) {
       toast.error("Ops, algo deu errado, tente novamente!");
-    };
+    }
   };
 
   const loginRequest = async (formData) => {
@@ -34,8 +34,8 @@ export const UserProvider = ({ children }) => {
       console.log(error);
       if (error.response.status >= 400) {
         toast.error("E-mail ou senha incorretos.");
-      };
-    };
+      }
+    }
   };
 
   const logOut = () => {

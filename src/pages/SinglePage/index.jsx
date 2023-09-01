@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { NewsList } from "../../components/NewsList";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { api } from "../../services/api";
 import { RxHeart, RxHeartFilled } from "react-icons/rx";
 import { useNewsContext } from "../../providers/NewsContext";
@@ -13,12 +13,10 @@ export const SinglePage = () => {
     likePost,
     likeId,
     unlikePost,
-    setLikeId,
     posts,
-    checkLikePost,
   } = useNewsContext();
 
-  const userInfo = localStorage.getItem("@USER");
+  const navigate = useNavigate();
 
   let amountPosts = 0;
   const newPosts = posts.filter((post) => {
@@ -34,8 +32,8 @@ export const SinglePage = () => {
         const { data } = await api.get(`posts/${id}?_embed=likes`);
         setSinglePost(data);
       } catch (error) {
-        // Caso dê errado, a notícia não existe
-        // Navigate('/notFound');
+        console.log(error);
+        navigate("/news");
       }
     };
 

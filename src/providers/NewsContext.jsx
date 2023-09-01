@@ -1,7 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { api } from "../services/api";
 import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
 
 const NewsContext = createContext({});
 
@@ -17,7 +16,6 @@ export const NewsProvider = ({ children }) => {
   const [editingPost, setEditingPost] = useState(null);
   const [likeId, setLikeId] = useState(null);
 
-  const navigate = useNavigate();
 
   useEffect(() => {
     const getAllPosts = async () => {
@@ -123,7 +121,6 @@ export const NewsProvider = ({ children }) => {
       setLikeId(data.id);
       toast.success("Post curtido com sucesso");
     } catch (error) {
-      // Haverá erro caso o token tenha expirado / o usuário não esteja logado
       toast.error("Você precisa estar logado para curtir uma publicação");
     }
   };
