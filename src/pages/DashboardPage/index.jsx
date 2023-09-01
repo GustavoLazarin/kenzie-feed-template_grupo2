@@ -4,6 +4,7 @@ import { MdAddCircleOutline } from "react-icons/md";
 import { useNewsContext } from "../../providers/NewsContext";
 import { NewPostModal } from "../../components/modals/NewPostModal";
 import { Skeleton } from "../../components/Skeleton";
+import { useDocTitle } from "../../hooks/useDocTitle";
 
 export const DashboardPage = () => {
   const { getOwnPosts, isCreating, setIsCreating, isLoading } = useNewsContext();
@@ -11,6 +12,8 @@ export const DashboardPage = () => {
   useEffect(() => {
     getOwnPosts();
   }, []);
+
+  useDocTitle("dashboard")
 
   return (
     <>
