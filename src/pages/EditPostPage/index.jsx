@@ -2,10 +2,13 @@ import { Navigate, useNavigate } from "react-router-dom";
 import { EditForm } from "../../components/forms/EditForm";
 import { useNewsContext } from "../../providers/NewsContext";
 import { AiOutlineArrowLeft } from "react-icons/ai";
+import { useDocTitle } from "../../hooks/useDocTitle";
 
 export const EditPostPage = () => {
   const navigate = useNavigate();
   const { editingPost } = useNewsContext();
+
+  useDocTitle("editar post")
 
   return (
     <>

@@ -2,10 +2,13 @@ import homeImg from "../../assets/homeImg.svg";
 import { Link } from "react-router-dom";
 import { NewsList } from "../../components/NewsList";
 import { useNewsContext } from "../../providers/NewsContext";
+import { useDocTitle } from "../../hooks/useDocTitle";
 
 export const HomePage = () => {
   const { posts } = useNewsContext();
   const newPostsList = posts.slice(0, 4);
+  
+  useDocTitle("feed");
 
   return (
     <main className="content overall-max-width">
