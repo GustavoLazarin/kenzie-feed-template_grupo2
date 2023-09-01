@@ -7,7 +7,7 @@ export const NewsCard = ({ post }) => {
   return (
     <li className="stack-large w-full grid-news-card">
       <div className="post-image">
-        <img className="w-full" src={post.image} alt={post.title} />
+        <img className="w-full obj-fit-cover" src={post.image} alt={post.title} />
       </div>
       <div className="stack-medium grid">
         <span className="author">Por: {post.owner}</span>
