@@ -4,12 +4,13 @@ import { TextArea } from "../inputs/TextArea";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { NewPostFormSchema } from "./NewPostFormSchema";
 import { useNewsContext } from "../../../providers/NewsContext";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const NewPostForm = () => {
   const {
     handleSubmit,
     register,
+    setFocus,
     formState: { errors },
   } = useForm({
     mode: "onChange",
@@ -22,6 +23,10 @@ export const NewPostForm = () => {
   const submit = (formData) => {
     createPost(formData, setIsLoading);
   };
+
+  useEffect(() => {
+    setFocus("title")
+  }, [])
 
   return (
     <form

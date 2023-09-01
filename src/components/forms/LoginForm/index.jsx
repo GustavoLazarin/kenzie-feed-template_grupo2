@@ -4,24 +4,32 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "../inputs/Input";
 import { InputPassword } from "../inputs/InputPassword";
 import { useUserContext } from "../../../providers/UserContext";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+
 
 export const LoginForm = () => {
   const {
     register,
     handleSubmit,
+    setFocus,
     formState: { errors },
   } = useForm({
     resolver: zodResolver(LoginSchema),
   });
-
+  
   const { loginRequest } = useUserContext();
   const [isLoading, setIsLoading] = useState(false);
-
+  
   const submit = (formData) => {
     loginRequest(formData, setIsLoading);
   };
+  
+  useEffect(() => {
+    setFocus("email");
+  }, []);
 
+  
   return (
     <div>
       <form className="stack-large" onSubmit={handleSubmit(submit)}>
@@ -29,8 +37,10 @@ export const LoginForm = () => {
           placeholder="E-mail"
           type={"email"}
           id={"email"}
-          error={errors.email}
           {...register("email")}
+          error={errors.email}
+          // {...emailRegister}
+
         />
 
         <InputPassword
@@ -40,7 +50,10 @@ export const LoginForm = () => {
           {...register("password")}
         />
 
-        <button className="btn__primary btn btn__small flex justify-content-center" type="submit">
+        <button
+          className="btn__primary btn btn__small flex justify-content-center"
+          type="submit"
+        >
           {isLoading ? <div className="custom-loader"></div> : "Entrar"}
         </button>
       </form>
