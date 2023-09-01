@@ -28,7 +28,7 @@ export const HomePage = () => {
           <section className="min-w-full stack-x-large">
             <div className=" stack-2x-large grid justify-items-center">
               <div className="post-image">
-              <img src={homeImg} alt="Kenzie Feed image" />
+              <img className="obj-fit-cover w-full" src={homeImg} alt="Kenzie Feed image" />
 
               </div>
               <div className="min-w-full overall-max-width align-items-center grid grid-heading">
