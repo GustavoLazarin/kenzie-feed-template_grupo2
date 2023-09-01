@@ -61,6 +61,8 @@ export const RegisterForm = () => {
         <button
           className="btn btn__primary btn__small grid-col-2 btn__register"
           type="submit"
+          aria-label="register"
+          title="cadastrar-se"
         >
           Cadastrar-se
         </button>
