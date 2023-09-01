@@ -118,17 +118,23 @@ export const NewsProvider = ({ children }) => {
         ...singlePost,
         likes: [...singlePost.likes, data],
       });
+      
       setLikeId(data.id);
-      toast.success("Post curtido com sucesso");
     } catch (error) {
-      toast.error("Você precisa estar logado para curtir uma publicação");
+      if(localStorage.getItem("@USER")) {
+        toast.error("Sua sessão expirou. Faça login novamente para curtir um post");
+        localStorage.removeItem("@USER");
+        localStorage.removeItem("@TOKEN");
+      } else {
+        toast.error("Você precisa estar logado para curtir uma publicação");
+      }
     }
   };
 
   const unlikePost = async (likeId) => {
     try {
       const token = localStorage.getItem("@TOKEN");
-      api.delete(`likes/${likeId}`, {
+      await api.delete(`likes/${likeId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -139,7 +145,13 @@ export const NewsProvider = ({ children }) => {
       setSinglePost({ ...singlePost, likes: newLikeList });
       setLikeId(null);
     } catch (error) {
-      console.log(error);
+      if(localStorage.getItem("@USER")) {
+        toast.error("Sua sessão expirou. Faça login novamente para curtir um post");
+        localStorage.removeItem("@USER");
+        localStorage.removeItem("@TOKEN");
+      } else {
+        toast.error("Você precisa estar logado para curtir uma publicação");
+      }
     }
   };
 
