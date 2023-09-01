@@ -27,7 +27,10 @@ export const HomePage = () => {
           </section>
           <section className="min-w-full stack-x-large">
             <div className=" stack-2x-large grid justify-items-center">
+              <div className="post-image">
               <img src={homeImg} alt="Kenzie Feed image" />
+
+              </div>
               <div className="min-w-full overall-max-width align-items-center grid grid-heading">
                 <h2 className="heading-2 justify-self-start">Últimas notícias</h2>
                 <Link

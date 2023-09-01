@@ -53,15 +53,7 @@
   li {
     min-width: 100%;
 
-    .post-image {
-      display: flex;
-
-      max-height: 13.75rem;
-
-      border-radius: 1.375rem;
-
-      overflow: hidden;
-    }
+    
   }
 
   @media (min-width: 950px) {
@@ -69,6 +61,28 @@
     row-gap: 2rem;
     column-gap: 1.125rem;
   }
+}
+
+.container__dashboard-image {
+  overflow: hidden;
+  position: relative;
+
+  object-fit: contain;
+
+  width: var(--container-dashboard-image);
+  height: var(--container-dashboard-image);
+}
+
+.post-image {
+  display: flex;
+
+  max-height: 13.75rem;
+
+  border-radius: 1.375rem;
+
+  overflow: hidden;
+  
+  @extend .relative;
 }
 
 .grid-col-2 {
