@@ -173,7 +173,7 @@ input, textarea, select, button, hr {
   border: var(--border-thickness) transparent;
 }
 textarea {
-  resize: vertical;
+  resize: none;
 }
 optgroup {
   text-decoration: inherit;

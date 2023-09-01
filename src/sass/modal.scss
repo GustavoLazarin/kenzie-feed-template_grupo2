@@ -11,6 +11,8 @@
   @extend .grid;
   @extend .justify-items-center;
   @extend .align-items-center;
+
+  margin: 0;
 }
 
 .dialog__overlay {
