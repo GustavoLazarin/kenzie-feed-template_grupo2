@@ -1,53 +1,70 @@
 import { useEffect } from "react";
 import { NewsList } from "../../components/NewsList";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { api } from "../../services/api";
 import { RxHeart, RxHeartFilled } from "react-icons/rx";
 import { useNewsContext } from "../../providers/NewsContext";
 
 export const SinglePage = () => {
-	const { id } = useParams();
-	const {
-		singlePost,
-		setSinglePost,
-		likePost,
-		likeId,
-		unlikePost,
-		setLikeId,
-		posts,
-		checkLikePost,
-	} = useNewsContext();
+  const { id } = useParams();
+  const {
+    singlePost,
+    setSinglePost,
+    likePost,
+    likeId,
+    unlikePost,
+    posts,
+  } = useNewsContext();
 
-	const userInfo = localStorage.getItem("@USER");
+  const navigate = useNavigate();
 
-	let amountPosts = 0;
-	const newPosts = posts.filter(post => {
-		if (post.id !== singlePost.id && amountPosts < 2) {
-			amountPosts++;
-			return post;
-		}
-	});
+  let amountPosts = 0;
+  const newPosts = posts.filter((post) => {
+    if (post.id !== singlePost.id && amountPosts < 2) {
+      amountPosts++;
+      return post;
+    }
+  });
 
-	useEffect(() => {
-		// Quando o componente for montado, haverá uma requisição get por ID do post
-		const getPostById = async () => {
-			try {
-				const { data } = await api.get(`posts/${id}?_embed=likes`);
-				setSinglePost(data);
-			} catch (error) {
-				// Caso dê errado, a notícia não existe
-				// Navigate('/notFound');
-			}
-		};
+  useEffect(() => {
+    const getPostById = async () => {
+      try {
+        const { data } = await api.get(`posts/${id}?_embed=likes`);
+        setSinglePost(data);
+      } catch (error) {
+        console.log(error);
+        navigate("/news");
+      }
+    };
 
-		getPostById();
-	}, [id]);
+    getPostById();
+  }, [id]);
 
-	return (
-		<>
-			<main className="stack-2x-large">
-				<article className="padding-i-24 stack-large overall-max-width">
-					<div className="grid">
+  return (
+    <>
+      <main className="stack-2x-large">
+        <article className="padding-i-24 stack-large overall-max-width">
+          <div className="grid">
+            <span className="min-w-full text-align-center">
+              Por: {singlePost.owner}
+            </span>
+            <h1 className="heading-3">{singlePost.title}</h1>
+          </div>
+          <img src={singlePost.image} alt="" />
+          <div className="flex  align-items-center like-gap">
+            {likeId ? (
+              <RxHeartFilled
+                className="liked"
+                onClick={() => unlikePost(likeId)}
+                size={22}
+              />
+            ) : (
+              <RxHeart
+                className="color-blue"
+                onClick={() => likePost(id)}
+                size={22}
+              />
+            )}
 
 					<span className="min-w-full text-align-center">Por: {singlePost.owner}</span>
 					<h1 className="heading-3">{singlePost.title}</h1>

@@ -3,7 +3,7 @@ import { LoginSchema } from "./LoginSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "../inputs/Input";
 import { InputPassword } from "../inputs/InputPassword";
-import { useUserContext} from "../../../providers/UserContext"
+import { useUserContext } from "../../../providers/UserContext";
 
 export const LoginForm = () => {
   const {
@@ -38,7 +38,9 @@ export const LoginForm = () => {
           {...register("password")}
         />
 
-        <button className="btn__primary btn btn__small" type="submit">Entrar</button>
+        <button className="btn__primary btn btn__small" type="submit">
+          Entrar
+        </button>
       </form>
     </div>
   );
