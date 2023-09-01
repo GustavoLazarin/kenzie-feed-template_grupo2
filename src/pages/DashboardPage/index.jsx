@@ -18,7 +18,7 @@ export const DashboardPage = () => {
           <div className="w-full overall-max-width align-items-center grid grid-heading">
             <h1 className="heading-3 justify-self-start">Suas Publicações</h1>
             <button
-              className=" btn btn__primary btn__small justify-content-center flex align-items-center btn__max-width "
+              className="min-w-full w-full btn btn__primary btn__small justify-content-center flex align-items-center btn-max-width like-gap "
               onClick={() => setIsCreating(true)}
             >
               <MdAddCircleOutline />
