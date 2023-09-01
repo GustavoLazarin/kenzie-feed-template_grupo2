@@ -4,6 +4,7 @@ import { TextArea } from "../inputs/TextArea";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { NewPostFormSchema } from "./NewPostFormSchema";
 import { useNewsContext } from "../../../providers/NewsContext";
+import { useState } from "react";
 
 export const NewPostForm = () => {
   const {
@@ -16,9 +17,10 @@ export const NewPostForm = () => {
   });
 
   const { createPost } = useNewsContext();
+  const [isLoading, setIsLoading] = useState();
 
   const submit = (formData) => {
-    createPost(formData);
+    createPost(formData, setIsLoading);
   };
 
   return (
@@ -38,11 +40,8 @@ export const NewPostForm = () => {
         error={errors.description}
       />
 
-      <button
-        className="btn btn__primary btn__small btn__max-width justify-self-end"
-        type="submit"
-      >
-        Criar post
+      <button  className="btn btn__primary btn__small btn__max-width justify-self-end" type="submit">
+        {isLoading ? <div className="custom-loader"></div> : "Entrar"}
       </button>
     </form>
   );

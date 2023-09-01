@@ -4,9 +4,11 @@ import { InputPassword } from "../inputs/InputPassword";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { registerFormSchema } from "./registerFormSchema";
 import { useUserContext } from "../../../providers/UserContext";
+import { useState } from "react";
 
 export const RegisterForm = () => {
   const { registerRequest } = useUserContext();
+  const [isLoading, setIsLoading] = useState(false);
 
   const {
     register,
@@ -18,7 +20,7 @@ export const RegisterForm = () => {
   });
 
   const submit = (formData) => {
-    registerRequest(formData, reset);
+    registerRequest(formData, reset, setIsLoading);
   };
 
   return (
@@ -58,13 +60,8 @@ export const RegisterForm = () => {
             {...register("confirmPassword")}
           />
         </div>
-        <button
-          className="btn btn__primary btn__small grid-col-2 btn__register"
-          type="submit"
-          aria-label="register"
-          title="cadastrar-se"
-        >
-          Cadastrar-se
+        <button className="btn btn__primary btn__small grid-col-2 btn__register" type="submit" aria-label="register" title="cadastrar-se">
+          {isLoading ? <div className="custom-loader"></div> : "Cadastrar-se"}
         </button>
       </form>
     </div>
