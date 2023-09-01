@@ -190,6 +190,7 @@ export const NewsProvider = ({ children }) => {
         likeId,
         setLikeId,
         checkLikePost,
+        isLoading
       }}
     >
       {children}
