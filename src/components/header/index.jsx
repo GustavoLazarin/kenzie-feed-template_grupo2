@@ -13,15 +13,17 @@ export const Header = () => {
   return (
     <header>
       <div className="header">
-        <img src={Logo} alt="KZ-logo" onClick={() => navigate("/")}/>
+        <img src={Logo} alt="KZ-logo" onClick={() => navigate("/")} />
         {token ? (
           <div className="header__user">
-            <button className="btn btn__primary btn__small">{user.name[0].toUpperCase()}</button>
+            <button className="btn btn__primary btn__small">
+              {user.name[0].toUpperCase()}
+            </button>
             <Link className="btn btn__secondary btn__small" to="/dashboard">
               Dashboard
             </Link>
-            <button className="btn btn__small btn__exit" onClick={logOut}> 
-              <BiExit size={25}/>
+            <button className="btn btn__small btn__exit" onClick={logOut}>
+              <BiExit size={25} />
             </button>
           </div>
         ) : (

@@ -23,7 +23,10 @@ export const RegisterForm = () => {
 
   return (
     <div>
-      <form className="grid grid-lg form__register-gap" onSubmit={handleSubmit(submit)}>
+      <form
+        className="grid grid-lg form__register-gap"
+        onSubmit={handleSubmit(submit)}
+      >
         <div className="register__input">
           <Input
             type="text"
@@ -55,7 +58,10 @@ export const RegisterForm = () => {
             {...register("confirmPassword")}
           />
         </div>
-        <button className="btn btn__primary btn__small grid-col-2 btn__register" type="submit">
+        <button
+          className="btn btn__primary btn__small grid-col-2 btn__register"
+          type="submit"
+        >
           Cadastrar-se
         </button>
       </form>
