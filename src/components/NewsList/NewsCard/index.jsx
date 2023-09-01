@@ -5,15 +5,17 @@ export const NewsCard = ({ post }) => {
   const { setSinglePost } = useNewsContext();
 
   return (
-    <li className="stack-large w-full">
+    <li className="stack-large w-full grid-news-card">
       <div className="post-image">
-        <img src={post.image} alt={post.title} />
+        <img className="w-full" src={post.image} alt={post.title} />
       </div>
       <div className="stack-medium grid">
         <span className="author">Por: {post.owner}</span>
         <h3 className="post-title">{post.title}</h3>
         <div>
           <Link
+            aria-label="full-post"
+            title="Ler notícia na íntegra"
             className="btn__tertiary"
             to={`/news/${post.id}`}
             onClick={() => {

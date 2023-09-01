@@ -26,6 +26,8 @@ export const HomePage = () => {
           <div className="min-w-full overall-max-width align-items-center grid grid-heading">
             <h2 className="heading-2 justify-self-start">Últimas notícias</h2>
             <Link
+              aria-label="go-allNews"
+              title="Todas as notícias"
               className="btn__max-width btn__register btn btn__primary btn__small"
               to={"/news"}
             >

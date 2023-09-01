@@ -13,7 +13,9 @@ export const Header = () => {
   return (
     <header>
       <div className="header">
-        <img src={Logo} alt="KZ-logo" onClick={() => navigate("/")} />
+        <button onClick={() => navigate("/")} aria-aria-label="return-Home" title="Retornar para Home" >
+          <img src={Logo} alt="KZ-logo"  />
+        </button>
         {token ? (
           <div className="header__user">
             <button className="btn btn__primary btn__small">
@@ -27,7 +29,7 @@ export const Header = () => {
             </button>
           </div>
         ) : (
-          <Link className="btn btn__small btn__primary w-auto" to="/login">
+          <Link title="Ir para Login" aria-label="Go-login" className="btn btn__small btn__primary w-auto" to="/login">
             Acessar
           </Link>
         )}
