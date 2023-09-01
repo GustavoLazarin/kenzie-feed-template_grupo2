@@ -15,12 +15,15 @@ export const NewsProvider = ({ children }) => {
   const [isCreating, setIsCreating] = useState(false);
   const [editingPost, setEditingPost] = useState(null);
   const [likeId, setLikeId] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
 
   useEffect(() => {
     const getAllPosts = async () => {
+      setIsLoading(true);
       const { data } = await api.get("posts?_embed=likes");
       setPosts(data);
+      setIsLoading(false);
     };
 
     getAllPosts();
@@ -33,16 +36,20 @@ export const NewsProvider = ({ children }) => {
   const getOwnPosts = async () => {
     const user = JSON.parse(localStorage.getItem("@USER"));
     try {
+      setIsLoading(true);
       const { data } = await api.get(`/posts/?userId=${user.id}`);
       setOwnPosts(data);
     } catch (error) {
       console.log(error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
   const editPost = async (formData) => {
     const token = localStorage.getItem("@TOKEN");
     try {
+      setIsLoading(true);
       const { data } = await api.put(`/posts/${editingPost.id}`, formData, {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -61,12 +68,15 @@ export const NewsProvider = ({ children }) => {
     } catch (error) {
       console.log(error);
       toast.error("Algo deu errado, tente novamente.");
+    } finally {
+      setIsLoading(false);
     }
   };
 
-  const deletePost = async (id) => {
+  const deletePost = async (id, setIsLoading) => {
     const token = localStorage.getItem("@TOKEN");
     try {
+      setIsLoading(true);
       await api.delete(`/posts/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -78,14 +88,18 @@ export const NewsProvider = ({ children }) => {
     } catch (error) {
       console.log(error);
       toast.error("Exclusão não foi possível, tente novamente mais tarde");
+    } finally {
+      setIsLoading(false);
     }
   };
-  const createPost = async (formData) => {
+
+  const createPost = async (formData, setIsLoading) => {
     const token = localStorage.getItem("@TOKEN");
     const user = JSON.parse(localStorage.getItem("@USER"));
     const post = { ...formData, owner: user.name, userId: user.id };
 
     try {
+      setIsLoading(true);
       const { data } = await api.post("posts", post, {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -100,6 +114,8 @@ export const NewsProvider = ({ children }) => {
       } else {
         console.log(error.message);
       }
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -118,17 +134,23 @@ export const NewsProvider = ({ children }) => {
         ...singlePost,
         likes: [...singlePost.likes, data],
       });
+      
       setLikeId(data.id);
-      toast.success("Post curtido com sucesso");
     } catch (error) {
-      toast.error("Você precisa estar logado para curtir uma publicação");
+      if(localStorage.getItem("@USER")) {
+        toast.error("Sua sessão expirou. Faça login novamente para curtir um post");
+        localStorage.removeItem("@USER");
+        localStorage.removeItem("@TOKEN");
+      } else {
+        toast.error("Você precisa estar logado para curtir uma publicação");
+      }
     }
   };
 
   const unlikePost = async (likeId) => {
     try {
       const token = localStorage.getItem("@TOKEN");
-      api.delete(`likes/${likeId}`, {
+      await api.delete(`likes/${likeId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -139,7 +161,13 @@ export const NewsProvider = ({ children }) => {
       setSinglePost({ ...singlePost, likes: newLikeList });
       setLikeId(null);
     } catch (error) {
-      console.log(error);
+      if(localStorage.getItem("@USER")) {
+        toast.error("Sua sessão expirou. Faça login novamente para curtir um post");
+        localStorage.removeItem("@USER");
+        localStorage.removeItem("@TOKEN");
+      } else {
+        toast.error("Você precisa estar logado para curtir uma publicação");
+      }
     }
   };
 
@@ -177,6 +205,7 @@ export const NewsProvider = ({ children }) => {
         likeId,
         setLikeId,
         checkLikePost,
+        isLoading
       }}
     >
       {children}

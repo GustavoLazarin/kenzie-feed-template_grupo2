@@ -10,10 +10,10 @@
     @include gap($g: 2rem);
     // @
     img {
-        @extend .w-full;
-        width: 160px;
-        height: 160px;
-    }
+        @extend .min-w-full;
+        height: var(--container-dashboard-image);
+        object-fit: cover;
+    }   
     h3 {
         max-inline-size: 40ch;
     }

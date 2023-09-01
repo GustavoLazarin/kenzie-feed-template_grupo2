@@ -12,19 +12,23 @@ export const useUserContext = () => {
 export const UserProvider = ({ children }) => {
   const navigate = useNavigate();
 
-  const registerRequest = async (formData, reset) => {
+  const registerRequest = async (formData, reset, setIsLoading) => {
     try {
+      setIsLoading(true);
       await api.post("/users", formData);
       reset();
       toast.success("Cadastro realizado com sucesso!");
       navigate("/login");
     } catch (error) {
       toast.error("Ops, algo deu errado, tente novamente!");
+    } finally {
+      setIsLoading(false);
     }
   };
 
-  const loginRequest = async (formData) => {
+  const loginRequest = async (formData, setIsLoading) => {
     try {
+      setIsLoading(true);
       const { data } = await api.post("/login", formData);
       localStorage.setItem("@TOKEN", data.accessToken);
       localStorage.setItem("@USER", JSON.stringify(data.user));
@@ -35,6 +39,8 @@ export const UserProvider = ({ children }) => {
       if (error.response.status >= 400) {
         toast.error("E-mail ou senha incorretos.");
       }
+    } finally {
+      setIsLoading(false);
     }
   };
 

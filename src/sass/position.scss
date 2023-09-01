@@ -15,10 +15,9 @@
   position: fixed;
 }
 
-.top-0 {
-  top: 0;
+
+.obj-fit-cover {
+  object-fit: cover;
+  object-position: center;
 }
 
-.left-5 {
-  left: .8rem;
-}
