@@ -5,9 +5,9 @@ import { AiOutlineArrowLeft } from "react-icons/ai";
 export const RegisterPage = () => {
   return (
     <>
-      <main className="content relative overall-max-width">
+      <main className="content overall-max-width grid grid-template-row-auto-1">
         <Link
-          className="top-0 left-5 absolute grid-btn__back grid align-items-center justify-items-center  btn btn__small btn__secondary"
+          className="like-gap justify-self-start grid grid-btn__back align-items-center justify-items-center  btn btn__small btn__secondary"
           to="/login"
         >
           <AiOutlineArrowLeft size={21} />
