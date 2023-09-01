@@ -52,11 +52,11 @@ export const SinglePage = () => {
 					<span className="min-w-full text-align-center">Por: {singlePost.owner}</span>
 					<h1 className="heading-3">{singlePost.title}</h1>
 					</div>
-					<img src={singlePost.image} alt="" />
+					<img className="w-full" src={singlePost.image} alt="" />
 					<div className="flex  align-items-center like-gap">
             {likeId ? 
              <RxHeartFilled className="liked" onClick={() => unlikePost(likeId)} size={22}/> 
-               : <RxHeart className="color-blue" onClick={() => likePost(id)} size={22}/> }
+               : <RxHeart className="color-blue unliked" onClick={() => likePost(id)} size={22}/> }
 						
 						{singlePost.likes?.length === 0 ? (
 							"Seja o primeiro a curtir esse post"
