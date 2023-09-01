@@ -29,6 +29,8 @@
 
   --toastify-color-success: var(--color-blue);
 
+  --box-shadow-1: 0 4px 8px -1px rgba(0, 0, 0, 0.2);
+
   // Tipos de tipografia
   --font-serif: "Lora", serif;
   --font-sans-serif: "Inter", sans-serif;
@@ -74,6 +76,6 @@
   --overall-max-width: 1050px;
 
   --news-title: 1.375rem;
-
+  
   --container-dashboard-image: 10rem;
 }
