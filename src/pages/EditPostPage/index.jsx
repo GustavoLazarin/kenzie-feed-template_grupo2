@@ -7,8 +7,8 @@ import { useDocTitle } from "../../hooks/useDocTitle";
 import { Link } from "react-router-dom";
 
 export const EditPostPage = () => {
-  const navigate = useNavigate();
   const { editingPost, isLoading } = useNewsContext();
+  
   useDocTitle("editar post")
 
   return (
