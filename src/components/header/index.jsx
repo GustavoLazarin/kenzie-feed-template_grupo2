@@ -53,7 +53,7 @@ export const Header = () => {
                             </button>
                         </div>
                     </div>
-                ) : (
+                ) : loc.pathname !== "/login" ? (
                     <Link
                         title="Ir para Login"
                         aria-label="Go-login"
@@ -62,7 +62,7 @@ export const Header = () => {
                     >
                         Acessar
                     </Link>
-                )}
+                ) : null}
             </div>
         </header>
     );
