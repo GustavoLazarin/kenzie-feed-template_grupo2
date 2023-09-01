@@ -15,7 +15,7 @@ export const UserNewsCard = ({ post }) => {
 
   return (
     <li className="userCard">
-      <div className="post-image">
+      <div className="container__dashboard-image">
         <img src={post.image} alt="Imagem da notícia." />
       </div>
       <h3 className="bold">{post.title}</h3>
