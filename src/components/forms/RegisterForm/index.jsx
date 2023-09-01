@@ -4,7 +4,7 @@ import { InputPassword } from "../inputs/InputPassword";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { registerFormSchema } from "./registerFormSchema";
 import { useUserContext } from "../../../providers/UserContext";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const RegisterForm = () => {
   const { registerRequest } = useUserContext();
@@ -13,6 +13,7 @@ export const RegisterForm = () => {
   const {
     register,
     handleSubmit,
+    setFocus,
     reset,
     formState: { errors },
   } = useForm({
@@ -22,6 +23,10 @@ export const RegisterForm = () => {
   const submit = (formData) => {
     registerRequest(formData, reset, setIsLoading);
   };
+
+  useEffect(() => {
+    setFocus("name")
+  }, [])
 
   return (
     <div>

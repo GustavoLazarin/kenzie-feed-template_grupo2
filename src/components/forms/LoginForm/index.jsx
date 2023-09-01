@@ -6,29 +6,30 @@ import { InputPassword } from "../inputs/InputPassword";
 import { useUserContext } from "../../../providers/UserContext";
 import { useState, useEffect } from "react";
 
+
+
 export const LoginForm = () => {
   const {
     register,
     handleSubmit,
+    setFocus,
     formState: { errors },
   } = useForm({
     resolver: zodResolver(LoginSchema),
   });
-
-  const { ref: emailRegister } = register("email");
-  useEffect(() => {
-    if (emailRegister) {
-      register?.email.focus();
-    }
-  }, [register.email]);
-
+  
   const { loginRequest } = useUserContext();
   const [isLoading, setIsLoading] = useState(false);
-
+  
   const submit = (formData) => {
     loginRequest(formData, setIsLoading);
   };
+  
+  useEffect(() => {
+    setFocus("email");
+  }, []);
 
+  
   return (
     <div>
       <form className="stack-large" onSubmit={handleSubmit(submit)}>
@@ -38,11 +39,8 @@ export const LoginForm = () => {
           id={"email"}
           {...register("email")}
           error={errors.email}
-          {...emailRegister}
-          ref={(event) => {
-            register.email = event;
-            emailRegister.current = event;
-          }}
+          // {...emailRegister}
+
         />
 
         <InputPassword
