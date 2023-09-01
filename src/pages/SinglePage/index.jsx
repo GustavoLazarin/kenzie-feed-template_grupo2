@@ -4,14 +4,17 @@ import { useNavigate, useParams } from "react-router-dom";
 import { api } from "../../services/api";
 import { RxHeart, RxHeartFilled } from "react-icons/rx";
 import { useNewsContext } from "../../providers/NewsContext";
+import { useDocTitle } from "../../hooks/useDocTitle";
 
 export const SinglePage = () => {
   const { id } = useParams();
   const { singlePost, setSinglePost, likePost, likeId, unlikePost, posts } =
-    useNewsContext();
-
+  useNewsContext();
+  
   const navigate = useNavigate();
-
+  
+  useDocTitle(singlePost.title);
+  
   let amountPosts = 0;
   const newPosts = posts.filter((post) => {
     if (post.id !== singlePost.id && amountPosts < 2) {

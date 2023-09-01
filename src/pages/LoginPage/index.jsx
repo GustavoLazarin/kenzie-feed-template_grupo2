@@ -1,8 +1,11 @@
 import loginImg from "../../assets/loginImg.svg";
 import { Link } from "react-router-dom";
 import { LoginForm } from "../../components/forms/LoginForm";
+import { useDocTitle } from "../../hooks/useDocTitle";
 
 export const LoginPage = () => {
+  useDocTitle("login");
+
   return (
     <>
       <main className="content content-large-screen overall-max-width">

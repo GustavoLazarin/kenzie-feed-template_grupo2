@@ -1,8 +1,11 @@
 import { NewsList } from "../../components/NewsList";
+import { useDocTitle } from "../../hooks/useDocTitle";
 import { useNewsContext } from "../../providers/NewsContext";
 
 export const AllNewsPage = () => {
   const { posts } = useNewsContext();
+  useDocTitle("todas as notícias");
+
 
   return (
     <>

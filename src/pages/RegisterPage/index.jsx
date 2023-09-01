@@ -1,8 +1,12 @@
 import { Link } from "react-router-dom";
 import { RegisterForm } from "../../components/forms/RegisterForm";
 import { AiOutlineArrowLeft } from "react-icons/ai";
+import { useDocTitle } from "../../hooks/useDocTitle";
+
 
 export const RegisterPage = () => {
+  useDocTitle("cadastro");
+
   return (
     <>
       <main className="content overall-max-width grid grid-template-row-auto-1">
