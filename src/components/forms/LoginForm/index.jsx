@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "../inputs/Input";
 import { InputPassword } from "../inputs/InputPassword";
 import { useUserContext } from "../../../providers/UserContext";
+import { useState } from "react";
 
 export const LoginForm = () => {
   const {
@@ -15,9 +16,10 @@ export const LoginForm = () => {
   });
 
   const { loginRequest } = useUserContext();
+  const [isLoading, setIsLoading] = useState(false);
 
   const submit = (formData) => {
-    loginRequest(formData);
+    loginRequest(formData, setIsLoading);
   };
 
   return (
@@ -38,8 +40,8 @@ export const LoginForm = () => {
           {...register("password")}
         />
 
-        <button className="btn__primary btn btn__small" type="submit">
-          Entrar
+        <button className="btn__primary btn btn__small flex justify-content-center" type="submit">
+          {isLoading ? <div className="custom-loader"></div> : "Entrar"}
         </button>
       </form>
     </div>

@@ -73,9 +73,10 @@ export const NewsProvider = ({ children }) => {
     }
   };
 
-  const deletePost = async (id) => {
+  const deletePost = async (id, setIsLoading) => {
     const token = localStorage.getItem("@TOKEN");
     try {
+      setIsLoading(true);
       await api.delete(`/posts/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -87,10 +88,12 @@ export const NewsProvider = ({ children }) => {
     } catch (error) {
       console.log(error);
       toast.error("Exclusão não foi possível, tente novamente mais tarde");
+    } finally {
+      setIsLoading(false);
     }
   };
 
-  const createPost = async (formData) => {
+  const createPost = async (formData, setIsLoading) => {
     const token = localStorage.getItem("@TOKEN");
     const user = JSON.parse(localStorage.getItem("@USER"));
     const post = { ...formData, owner: user.name, userId: user.id };
