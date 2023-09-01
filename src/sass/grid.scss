@@ -77,6 +77,10 @@
   }
 }
 
+.grid-template-row-auto-1 {
+  grid-template-rows: auto 1fr;
+}
+
 .justify-self-start {
   justify-self: baseline;
 }
