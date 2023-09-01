@@ -1,9 +1,11 @@
 import { NewsList } from "../../components/NewsList";
+import { useDocTitle } from "../../hooks/useDocTitle"
 import { Skeleton } from "../../components/Skeleton";
 import { useNewsContext } from "../../providers/NewsContext";
 
 export const AllNewsPage = () => {
   const { posts, isLoading } = useNewsContext();
+  useDocTitle("todas as notícias")
 
   return (
     <>
@@ -18,3 +20,4 @@ export const AllNewsPage = () => {
     </>
   );
 };
+

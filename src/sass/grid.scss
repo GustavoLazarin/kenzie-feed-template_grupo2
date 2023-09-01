@@ -88,3 +88,9 @@
 .justify-self-end {
   justify-self: end;
 }
+
+.grid-news-card {
+  @extend .grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 15.5rem 1fr auto;
+}

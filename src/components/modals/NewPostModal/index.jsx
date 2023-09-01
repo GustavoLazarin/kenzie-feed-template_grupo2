@@ -12,7 +12,6 @@ export const NewPostModal = () => {
   useKeyDown("Escape", () => setIsCreating(false));
 
   return (
-
     <FocusTrap>
       <div ref={ref} className="dialog__overlay" role="dialog">
         <div className="dialog__container">

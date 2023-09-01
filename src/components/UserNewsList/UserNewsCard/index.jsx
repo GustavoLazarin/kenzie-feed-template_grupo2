@@ -21,12 +21,16 @@ export const UserNewsCard = ({ post }) => {
         <button
           className="btn bg-grey color-blue"
           onClick={() => editBttn(post)}
-        >
+          aria-label="edit"
+          title="editar post"
+          >
           <MdOutlineEdit size={30} />
         </button>
         <button
           className="btn bg-grey color-blue"
           onClick={() => deletePost(post.id)}
+          aria-label="remove"
+          title="remover post"
         >
           <MdDeleteOutline size={30} />
         </button>

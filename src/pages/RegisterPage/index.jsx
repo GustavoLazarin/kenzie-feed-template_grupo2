@@ -1,14 +1,20 @@
 import { Link } from "react-router-dom";
 import { RegisterForm } from "../../components/forms/RegisterForm";
 import { AiOutlineArrowLeft } from "react-icons/ai";
+import { useDocTitle } from "../../hooks/useDocTitle";
+
 
 export const RegisterPage = () => {
+  useDocTitle("cadastro");
+
   return (
     <>
-      <main className="content relative overall-max-width">
+      <main className="content overall-max-width grid grid-template-row-auto-1">
         <Link
-          className="top-0 left-5 absolute grid-btn__back grid align-items-center justify-items-center  btn btn__small btn__secondary"
+          className="like-gap justify-self-start grid grid-btn__back align-items-center justify-items-center  btn btn__small btn__secondary"
           to="/login"
+          aria-label="back"
+          title="voltar"
         >
           <AiOutlineArrowLeft size={21} />
           Voltar

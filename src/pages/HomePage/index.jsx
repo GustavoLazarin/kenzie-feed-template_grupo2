@@ -3,11 +3,13 @@ import { Link } from "react-router-dom";
 import { NewsList } from "../../components/NewsList";
 import { useNewsContext } from "../../providers/NewsContext";
 import { Skeleton } from "../../components/Skeleton";
+import { useDocTitle } from "../../hooks/useDocTitle";
 
 export const HomePage = () => {
   const { posts, isLoading } = useNewsContext();
   const newPostsList = posts.slice(0, 4);
-  
+   useDocTitle("feed");
+ 
   return (
     <>
       {isLoading ? <Skeleton/> : (
@@ -29,6 +31,8 @@ export const HomePage = () => {
               <div className="min-w-full overall-max-width align-items-center grid grid-heading">
                 <h2 className="heading-2 justify-self-start">Últimas notícias</h2>
                 <Link
+                  aria-label="go-allNews"
+                  title="Todas as notícias"
                   className="btn__max-width btn__register btn btn__primary btn__small"
                   to={"/news"}
                 >
@@ -38,7 +42,7 @@ export const HomePage = () => {
             </div>
             <NewsList newPosts={newPostsList} />
           </section>
-        </main>
+    </main>
       )}
     </>
   );

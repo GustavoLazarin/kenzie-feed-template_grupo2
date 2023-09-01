@@ -1,12 +1,15 @@
-import { Navigate, useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { EditForm } from "../../components/forms/EditForm";
 import { useNewsContext } from "../../providers/NewsContext";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { Skeleton } from "../../components/Skeleton";
+import { useDocTitle } from "../../hooks/useDocTitle";
+import { Link } from "react-router-dom";
 
 export const EditPostPage = () => {
   const navigate = useNavigate();
   const { editingPost, isLoading } = useNewsContext();
+  useDocTitle("editar post")
 
   return (
     <>
@@ -15,13 +18,16 @@ export const EditPostPage = () => {
           <div className="w-full stack-large container__edit padding-i-24 padding-b-24 ">
             <div className="flex space-between ">
               <h1 className="bold post-title">Editando:</h1>
-              <button
+              
+              <Link
                 className="btn__secondary btn bg-grey flex align-items-center btn__small btn__gap"
-                onClick={() => navigate("/dashboard")}
+                to="/dashboard"
+                aria-label="back"
+                title="voltar"
               >
-                <AiOutlineArrowLeft size={22} />
+              <AiOutlineArrowLeft size={21} />
                 Voltar
-              </button>
+              </Link>
             </div>
             <div>{editingPost ? <EditForm /> : <Navigate to="/dashboard" />}</div>
           </div>
