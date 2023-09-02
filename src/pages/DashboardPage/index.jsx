@@ -13,7 +13,7 @@ export const DashboardPage = () => {
     getOwnPosts();
   }, []);
 
-  useDocTitle("dashboard")
+  useDocTitle("Dashboard");
 
   return (
     <>

@@ -8,7 +8,7 @@ import { useDocTitle } from "../../hooks/useDocTitle";
 export const HomePage = () => {
   const { posts, isLoading } = useNewsContext();
   const newPostsList = posts.slice(0, 4);
-   useDocTitle("feed");
+  useDocTitle("Feed");
  
   return (
     <>
