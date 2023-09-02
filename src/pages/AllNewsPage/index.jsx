@@ -5,7 +5,7 @@ import { useNewsContext } from "../../providers/NewsContext";
 
 export const AllNewsPage = () => {
   const { posts, isLoading } = useNewsContext();
-  useDocTitle("todas as notícias")
+  useDocTitle("Todas as notícias");
 
   return (
     <>

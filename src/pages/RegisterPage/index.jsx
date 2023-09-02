@@ -5,7 +5,7 @@ import { useDocTitle } from "../../hooks/useDocTitle";
 
 
 export const RegisterPage = () => {
-  useDocTitle("cadastro");
+  useDocTitle("Cadastro");
 
   return (
     <>
