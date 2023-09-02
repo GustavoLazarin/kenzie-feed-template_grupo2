@@ -20,10 +20,10 @@ export const UserNewsCard = ({ post }) => {
       </div>
       <h3 className="bold">{post.title}</h3>
       <div className="flex userCard__btns__gap ">
-        <button className="btn bg-grey color-blue"  onClick={() => editBttn(post)} aria-label="edit" title="editar post">
+        <button className="btn bg-grey color-blue btn__dashboard"  onClick={() => editBttn(post)} aria-label="edit" title="editar post">
           <MdOutlineEdit size={30} />
         </button>
-        <button className="btn bg-grey color-blue"  onClick={() => deletePost(post.id, setIsLoading)} aria-label="remove" title="remover post">
+        <button className="btn bg-grey color-blue btn__dashboard"  onClick={() => deletePost(post.id, setIsLoading)} aria-label="remove" title="remover post">
           {isLoading ? <div className="custom-loader primary"></div> : <MdDeleteOutline size={30} />}
         </button>
       </div>

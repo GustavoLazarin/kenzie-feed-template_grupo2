@@ -66,6 +66,10 @@
   object-fit: contain;
   width: var(--container-dashboard-image);
   height: var(--container-dashboard-image);
+
+  @media(max-width: 400px){
+    width: 100px;
+  }
 }
 
 .post-image {
