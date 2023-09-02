@@ -52,11 +52,9 @@
 
   li {
     min-width: 100%;
-
-    
   }
 
-  @media (min-width: 950px) {
+  @media (min-width: 675px) {
     grid-template-columns: repeat(2, 1fr);
     row-gap: 2rem;
     column-gap: 1.125rem;
