@@ -10,7 +10,6 @@
 .everything {
   @extend .justify-items-center;
   @extend .grid-page;
-
   height: 100dvh;
 }
 
@@ -23,18 +22,13 @@ footer {
 }
 
 .content {
-
   @extend .grid;
   @extend .align-items-center;
   @extend .justify-items-center;
   @extend .stack-large;
-
-
 }
-
 
 .page-heading {
   @extend .text-align-center;
   font-weight: var(--bold);
-
 }

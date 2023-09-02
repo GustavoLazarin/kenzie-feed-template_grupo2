@@ -23,9 +23,7 @@ footer,
 .heading-2,
 .heading-3 {
   line-height: 150%;
-
   @extend .text-align-center;
-
   font-weight: var(--bold);
 }
 
@@ -43,7 +41,6 @@ footer,
   @media (min-width: 950px) {
     font-size: var(--title-2);
   }
-
 }
 
 h1 {
@@ -62,15 +59,12 @@ h1 {
 .post-title {
   line-height: 120%;
   font-weight: var(--bold);
-
   font-size: clamp(var(--title-post-mobile), 2vw, var(--title-post));
-  
 }
 .paragraph-large {
   font-size: clamp(var(--paragraph), 2vw, var(--paragraph-large));
   line-height: 150%;
   line-break: auto;
-
 }
 
 .news-title {

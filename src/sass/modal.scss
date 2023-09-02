@@ -11,28 +11,20 @@
   @extend .grid;
   @extend .justify-items-center;
   @extend .align-items-center;
-
   margin: 0;
 }
 
 .dialog__overlay {
   @extend .modal;
-
-  
-  
   background-color: var(--color-blue-modal);
-  
+
   .dialog__container {
     @include padding-block($p: var(--s1));
     background-color: var(--color-white);
-
     @extend .grid;
     @extend .stack-medium;
-
-
     width: 90dvw;
-    max-width: calc(var(--overall-max-width)*.8);
-
+    max-width: calc(var(--overall-max-width) * 0.8);
     border-radius: var(--large-radius);
     @extend .grid;
 
@@ -41,11 +33,9 @@
       padding-inline: var(--s1);
     }
 
-    //   nome do Modal e o "X" pra sair
     .container__top {
       border-start-end-radius: 0.25rem;
       border-start-start-radius: 0.25rem;
-
       @include padding-inline($p: var(--s1));
       @extend .flex;
       @extend .space-between;

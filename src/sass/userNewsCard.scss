@@ -1,28 +1,24 @@
 .userCard {
-    @extend .grid;
-    @extend .align-items-center;
+  @extend .grid;
+  @extend .align-items-center;
+  @extend .min-w-full;
+  grid-template-columns: auto 1fr auto;
+  @extend .space-between;
+  @include gap($g: 2rem);
+  img {
     @extend .min-w-full;
-
-
-
-    grid-template-columns: auto 1fr auto;
-    @extend .space-between;
-    @include gap($g: 2rem);
-    // @
-    img {
-        @extend .min-w-full;
-        height: var(--container-dashboard-image);
-        object-fit: cover;
-    }   
-    h3 {
-        max-inline-size: 40ch;
-    }
+    height: var(--container-dashboard-image);
+    object-fit: cover;
+  }
+  h3 {
+    max-inline-size: 40ch;
+  }
 }
 
 .userCard__btns__gap {
-    gap: 1rem;
+  gap: 1rem;
 }
 
 .btn__gap {
-    gap: .5rem;
+  gap: 0.5rem;
 }

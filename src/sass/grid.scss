@@ -24,8 +24,7 @@
 
 .grid-page {
   @extend .grid;
-  grid-template-rows:
-    auto 1fr auto;
+  grid-template-rows: auto 1fr auto;
 }
 
 .content-large-screen {
@@ -64,22 +63,16 @@
 .container__dashboard-image {
   overflow: hidden;
   position: relative;
-
   object-fit: contain;
-
   width: var(--container-dashboard-image);
   height: var(--container-dashboard-image);
 }
 
 .post-image {
   display: flex;
-
   max-height: 13.75rem;
-
   border-radius: 1.375rem;
-
   overflow: hidden;
-
   @extend .relative;
 }
 
