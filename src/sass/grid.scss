@@ -79,7 +79,7 @@
   border-radius: 1.375rem;
 
   overflow: hidden;
-  
+
   @extend .relative;
 }
 
@@ -108,5 +108,5 @@
 .grid-news-card {
   @extend .grid;
   grid-template-columns: 100%;
-  grid-template-rows: 15.5rem 1fr auto;
+  grid-template-rows: 11rem 1fr auto;
 }
