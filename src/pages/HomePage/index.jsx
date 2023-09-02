@@ -4,11 +4,17 @@ import { NewsList } from "../../components/NewsList";
 import { useNewsContext } from "../../providers/NewsContext";
 import { Skeleton } from "../../components/Skeleton";
 import { useDocTitle } from "../../hooks/useDocTitle";
+import { useEffect } from "react";
 
 export const HomePage = () => {
-  const { posts, isLoading } = useNewsContext();
+  const { posts, isLoading, getAllPosts } = useNewsContext();
   const newPostsList = posts.slice(0, 4);
+  
   useDocTitle("Feed");
+
+  useEffect(() => {
+    getAllPosts();
+  }, []);
  
   return (
     <>

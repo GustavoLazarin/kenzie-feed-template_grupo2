@@ -5,10 +5,12 @@ import { RxHeart, RxHeartFilled } from "react-icons/rx";
 import { useNewsContext } from "../../providers/NewsContext";
 
 export const SinglePage = () => {
-
   const { id } = useParams();
-  const { singlePost, likePost, likeId, unlikePost, posts, getPostById } =
-  useNewsContext();
+  const { singlePost, likePost, likeId, unlikePost, posts, getAllPosts, getPostById } = useNewsContext();
+
+  useEffect(() => {
+    getAllPosts();
+  }, []);
   
   let amountPosts = 0;
   const newPosts = posts.filter((post) => {

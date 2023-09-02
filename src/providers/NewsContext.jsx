@@ -19,18 +19,14 @@ export const NewsProvider = ({ children }) => {
   const [likeId, setLikeId] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
+  const getAllPosts = async () => {
+    setIsLoading(true);
+    const { data } = await api.get("posts?_embed=likes");
+    setPosts(data);
+    setIsLoading(false);
+  };
+
   const navigate = useNavigate();
-
-  useEffect(() => {
-    const getAllPosts = async () => {
-      setIsLoading(true);
-      const { data } = await api.get("posts?_embed=likes");
-      setPosts(data);
-      setIsLoading(false);
-    };
-
-    getAllPosts();
-  }, []);
 
   useEffect(() => {
     checkLikePost();
@@ -222,6 +218,7 @@ export const NewsProvider = ({ children }) => {
         setLikeId,
         checkLikePost,
         isLoading,
+        getAllPosts,
         getPostById
       }}
     >
