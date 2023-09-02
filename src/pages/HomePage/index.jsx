@@ -9,7 +9,8 @@ import { useEffect } from "react";
 export const HomePage = () => {
   const { posts, isLoading, getAllPosts } = useNewsContext();
   const newPostsList = posts.slice(0, 4);
-  useDocTitle("feed");
+  
+  useDocTitle("Feed");
 
   useEffect(() => {
     getAllPosts();
