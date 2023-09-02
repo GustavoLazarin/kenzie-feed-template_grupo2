@@ -2,8 +2,6 @@
 @import "./sizing.scss";
 @import "./flex.scss";
 @import "./stack.scss";
-// @import "./grid.scss";
-
 
 .cards {
   display: inline-flex;
@@ -18,8 +16,6 @@
 
 .container__edit {
   max-width: 56rem;
-  // @extend .stack-large;
-  // @extend .w-full;
 }
 
 .card {

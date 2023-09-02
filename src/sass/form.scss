@@ -9,22 +9,17 @@
 form {
   @extend .grid;
   @extend .align-items-center;
-
-
   @extend .w-full;
 
-  input, textarea {
+  input,
+  textarea {
     @extend .input-large;
     @include padding-inline($p: 1.5rem);
     @extend .min-w-full;
     @extend .w-full;
-
     max-width: var(--input-max-width);
-
     outline: var(--border-thickness) var(--color-grey);
-
     border-radius: var(--small-radius);
-
     transition: outline 300ms;
 
     &:hover {
@@ -35,18 +30,16 @@ form {
       outline: var(--border-thickness) var(--color-blue);
     }
   }
-
 }
 
 .input-large {
-  @include padding-block($p: .5rem);
-
+  @include padding-block($p: 0.5rem);
 }
 
 .register__input {
   @extend .w-full;
 
-  @media (min-width:950px) {
+  @media (min-width: 950px) {
     height: 5rem;
   }
 }

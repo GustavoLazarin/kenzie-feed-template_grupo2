@@ -7,23 +7,18 @@
 @import "./stack.scss";
 @import "./margin.scss";
 
-
-
 footer {
   @extend .flex;
   @extend .justify-items-center;
   @extend .text-align-center;
-  
-  &>* {
+
+  & > * {
     @include margin-block($m: var(--s4));
     @extend .min-w-full;
     font-size: var(--small-paragraph);
-      
-      @media (min-width: 400px){
-        font-size: var(--paragraph);
 
-      }
+    @media (min-width: 400px) {
+      font-size: var(--paragraph);
     }
-
   }
-  
+}

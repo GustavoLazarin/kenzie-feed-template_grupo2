@@ -3,15 +3,19 @@
 .w-full {
   width: 100%;
 }
+
 .w-auto {
   width: auto;
 }
+
 .overall-max-width {
   max-width: var(--overall-max-width);
 }
+
 .h-full {
   height: 100%;
 }
+
 .min-w-full {
   min-width: 100%;
 }
@@ -23,6 +27,7 @@
 .min-w-full {
   min-width: 100%;
 }
+
 .h-full-dvh {
   height: 100dvh;
 }
