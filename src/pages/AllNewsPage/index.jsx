@@ -2,10 +2,15 @@ import { NewsList } from "../../components/NewsList";
 import { useDocTitle } from "../../hooks/useDocTitle"
 import { Skeleton } from "../../components/Skeleton";
 import { useNewsContext } from "../../providers/NewsContext";
+import { useEffect } from "react";
 
 export const AllNewsPage = () => {
-  const { posts, isLoading } = useNewsContext();
-  useDocTitle("todas as notícias")
+  const { posts, isLoading, getAllPosts } = useNewsContext();
+  useDocTitle("todas as notícias");
+
+  useEffect(() => {
+    getAllPosts();
+  }, []);
 
   return (
     <>

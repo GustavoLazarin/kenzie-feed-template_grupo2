@@ -8,8 +8,12 @@ import { useDocTitle } from "../../hooks/useDocTitle";
 
 export const SinglePage = () => {
   const { id } = useParams();
-  const { singlePost, setSinglePost, likePost, likeId, unlikePost, posts } =
+  const { singlePost, setSinglePost, likePost, likeId, unlikePost, posts, getAllPosts } =
   useNewsContext();
+
+  useEffect(() => {
+    getAllPosts();
+  }, []);
   
   const navigate = useNavigate();
   
