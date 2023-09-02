@@ -4,7 +4,7 @@ import { LoginForm } from "../../components/forms/LoginForm";
 import { useDocTitle } from "../../hooks/useDocTitle";
 
 export const LoginPage = () => {
-  useDocTitle("login");
+  useDocTitle("Login");
 
   return (
     <>

@@ -1,41 +1,26 @@
 import { useEffect } from "react";
 import { NewsList } from "../../components/NewsList";
 import { useNavigate, useParams } from "react-router-dom";
-import { api } from "../../services/api";
 import { RxHeart, RxHeartFilled } from "react-icons/rx";
 import { useNewsContext } from "../../providers/NewsContext";
-import { useDocTitle } from "../../hooks/useDocTitle";
 
 export const SinglePage = () => {
-    const { id } = useParams();
-    const { singlePost, setSinglePost, likePost, likeId, unlikePost, posts } =
-        useNewsContext();
 
-    const navigate = useNavigate();
+  const { id } = useParams();
+  const { singlePost, likePost, likeId, unlikePost, posts, getPostById } =
+  useNewsContext();
+  
+  let amountPosts = 0;
+  const newPosts = posts.filter((post) => {
+    if (post.id !== singlePost.id && amountPosts < 2) {
+      amountPosts++;
+      return post;
+    }
+  });
 
-    useDocTitle(singlePost.title);
-
-    let amountPosts = 0;
-    const newPosts = posts.filter((post) => {
-        if (post.id !== singlePost.id && amountPosts < 2) {
-            amountPosts++;
-            return post;
-        }
-    });
-
-    useEffect(() => {
-        const getPostById = async () => {
-            try {
-                const { data } = await api.get(`posts/${id}?_embed=likes`);
-                setSinglePost(data);
-            } catch (error) {
-                console.log(error);
-                navigate("/news");
-            }
-        };
-
-        getPostById();
-    }, [id]);
+  useEffect(() => {
+    getPostById(id);
+  }, [id]);
 
     return (
         <>

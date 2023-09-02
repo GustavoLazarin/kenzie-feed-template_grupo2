@@ -4,8 +4,8 @@ import { Skeleton } from "../../components/Skeleton";
 import { useNewsContext } from "../../providers/NewsContext";
 
 export const AllNewsPage = () => {
-    const { posts, isLoading } = useNewsContext();
-    useDocTitle("todas as notícias");
+  const { posts, isLoading } = useNewsContext();
+  useDocTitle("Todas as notícias");
 
     return (
         <>

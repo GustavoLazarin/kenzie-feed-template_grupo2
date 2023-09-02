@@ -1,6 +1,8 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { api } from "../services/api";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
+import { useDocTitle } from "../hooks/useDocTitle";
 
 const NewsContext = createContext({});
 
@@ -17,6 +19,7 @@ export const NewsProvider = ({ children }) => {
   const [likeId, setLikeId] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
+  const navigate = useNavigate();
 
   useEffect(() => {
     const getAllPosts = async () => {
@@ -32,6 +35,19 @@ export const NewsProvider = ({ children }) => {
   useEffect(() => {
     checkLikePost();
   }, [singlePost]);
+
+  const getPostById = async (id) => {
+    try {
+      const { data } = await api.get(`posts/${id}?_embed=likes`);
+      setSinglePost(data);
+      
+      const dataFormat = `${data.title[0].toUpperCase()}${data.title.slice(1).toLowerCase()}`;
+      useDocTitle(dataFormat);
+    } catch (error) {
+      console.log(error);
+      navigate("/news");
+    }
+  };
 
   const getOwnPosts = async () => {
     const user = JSON.parse(localStorage.getItem("@USER"));
@@ -205,7 +221,8 @@ export const NewsProvider = ({ children }) => {
         likeId,
         setLikeId,
         checkLikePost,
-        isLoading
+        isLoading,
+        getPostById
       }}
     >
       {children}
