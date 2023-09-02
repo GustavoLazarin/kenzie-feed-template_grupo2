@@ -13,7 +13,7 @@ export const EditForm = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isDirty },
   } = useForm({
     resolver: zodResolver(EditSchema),
     values: {
@@ -61,6 +61,7 @@ export const EditForm = () => {
         <button
           className="btn__primary btn btn-max-width justify-self-end btn__small"
           type="submit"
+          disabled={!isDirty}
         >
           Salvar post
         </button>
