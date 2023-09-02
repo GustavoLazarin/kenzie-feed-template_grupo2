@@ -76,6 +76,10 @@
   @extend .relative;
 }
 
+.hero {
+  min-height: 236px;
+}
+
 .grid-col-2 {
   @media (min-width: 750px) {
     grid-column: 2;
@@ -97,5 +101,5 @@
 .grid-news-card {
   @extend .grid;
   grid-template-columns: 100%;
-  grid-template-rows: 15.5rem 1fr auto;
+  grid-template-rows: 11rem 1fr auto;
 }
