@@ -13,7 +13,7 @@ export const InputPassword = forwardRef(
           {...rest}
         />
         {error ? (
-          <span className="color-red padding-i-s-24">{error.message}</span>
+          <span className="color-red">{`* ${error.message}`}</span>
         ) : null}
       </div>
     );

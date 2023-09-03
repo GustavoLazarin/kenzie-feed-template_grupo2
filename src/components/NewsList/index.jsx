@@ -1,11 +1,25 @@
+import { useLocation } from "react-router-dom";
+import { useNewsContext } from "../../providers/NewsContext";
+import { NewsCardSkeleton } from "../skeletons/NewsCardSkeleton";
 import { NewsCard } from "./NewsCard";
 
 export const NewsList = ({ newPosts }) => {
+    const { isLoading } = useNewsContext();
+
+    const loc = useLocation();
+
     return (
         <ul className="w-full grid grid-news justify-items-center news-gap">
-            {newPosts.map((post) => (
-                <NewsCard key={post.id} post={post} />
-            ))}
+            {isLoading ? (
+                <>
+                    <NewsCardSkeleton />
+                    <NewsCardSkeleton />
+                    <NewsCardSkeleton />
+                    <NewsCardSkeleton />
+                </>
+            ) : (
+                newPosts.map((post) => <NewsCard key={post.id} post={post} />)
+            )}
         </ul>
     );
 };

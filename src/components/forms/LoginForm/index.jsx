@@ -51,7 +51,7 @@ export const LoginForm = () => {
         />
 
         <button
-          className="btn__primary btn btn__small flex justify-content-center"
+          className="content btn__primary btn btn__small flex justify-content-center"
           type="submit"
         >
           {isLoading ? <div className="custom-loader"></div> : "Entrar"}
