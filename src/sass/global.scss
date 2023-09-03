@@ -22,9 +22,6 @@ footer {
 }
 
 .content {
-  @extend .grid;
-  @extend .align-items-center;
-  @extend .justify-items-center;
   @extend .stack-large;
 }
 

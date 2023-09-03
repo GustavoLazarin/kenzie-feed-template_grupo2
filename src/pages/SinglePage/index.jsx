@@ -26,16 +26,16 @@ export const SinglePage = () => {
 
     return (
         <>
-            <main className="content">
-                <article className="stack-large overall-max-width">
-                    <div className="contento verall-max-width grid">
+            <main className="content align-items-center">
+                <article className="stack-large current-news">
+                    <div className="grid">
                         <span className="min-w-full text-align-center">
                             Por: {singlePost.owner}
                         </span>
                         <h1 className="heading-3">{singlePost.title}</h1>
                     </div>
                     <img className="w-full" src={singlePost.image} alt="" />
-                    <div className="flex  align-items-center like-gap">
+                    <div className="flex like-gap">
                         {likeId ? (
                             <RxHeartFilled
                                 className="liked"
@@ -63,7 +63,7 @@ export const SinglePage = () => {
                     </div>
                     <p className="paragraph-large">{singlePost.description}</p>
                 </article>
-                <section className="padding-i-24 min-w-full stack-large">
+                <section className="min-w-full stack-large">
                     <h2 className="post-title">Leia também</h2>
                     <NewsList newPosts={newPosts} />
                 </section>

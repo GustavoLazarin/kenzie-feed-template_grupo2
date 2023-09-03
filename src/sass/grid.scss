@@ -67,7 +67,7 @@
   width: var(--container-dashboard-image);
   height: var(--container-dashboard-image);
 
-  @media(max-width: 400px){
+  @media(max-width: 400px) {
     width: 100px;
   }
 }
@@ -82,6 +82,13 @@
 
 .hero {
   min-height: 236px;
+}
+
+.current-news {
+  width: 100%;
+  max-width: 918px;
+
+  margin: 0 auto;
 }
 
 .grid-col-2 {
