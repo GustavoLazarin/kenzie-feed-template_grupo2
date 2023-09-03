@@ -1,6 +1,5 @@
 import { NewsList } from "../../components/NewsList";
 import { useDocTitle } from "../../hooks/useDocTitle";
-import { Skeleton } from "../../components/Skeleton";
 import { useNewsContext } from "../../providers/NewsContext";
 import { useEffect } from "react";
 
