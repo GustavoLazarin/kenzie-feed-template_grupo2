@@ -16,6 +16,7 @@ export const SinglePage = () => {
         getAllPosts,
         getPostById,
         isLoading,
+        isLiking
     } = useNewsContext();
 
     useEffect(() => {
@@ -52,17 +53,21 @@ export const SinglePage = () => {
                         <img className="w-full" src={singlePost.image} alt="" />
                         <div className="flex like-gap">
                             {likeId ? (
-                                <RxHeartFilled
-                                    className="liked"
-                                    onClick={() => unlikePost(likeId)}
-                                    size={22}
-                                />
+                                <button disabled={isLiking}>
+                                    <RxHeartFilled
+                                        className="liked"
+                                        onClick={() => unlikePost(likeId)}
+                                        size={22}
+                                        />
+                                </button>
                             ) : (
-                                <RxHeart
-                                    className="color-blue unliked"
-                                    onClick={() => likePost(id)}
-                                    size={22}
-                                />
+                                <button disabled={isLiking}>
+                                    <RxHeart
+                                        className="color-blue unliked"
+                                        onClick={() => likePost(id)}
+                                        size={22}
+                                    />
+                                </button>
                             )}
 
                             {singlePost.likes?.length === 0 ? (

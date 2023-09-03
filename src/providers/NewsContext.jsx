@@ -18,6 +18,7 @@ export const NewsProvider = ({ children }) => {
   const [editingPost, setEditingPost] = useState(null);
   const [likeId, setLikeId] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [isLiking, setIsLiking] = useState(false);
 
   const getAllPosts = async () => {
     setIsLoading(true);
@@ -133,6 +134,7 @@ export const NewsProvider = ({ children }) => {
 
   const likePost = async (id) => {
     try {
+      setIsLiking(true)
       const token = localStorage.getItem("@TOKEN");
       const user = JSON.parse(localStorage.getItem("@USER"));
       const likeStructure = { userId: user.id, postId: Number(id) };
@@ -156,11 +158,14 @@ export const NewsProvider = ({ children }) => {
       } else {
         toast.error("Você precisa estar logado para curtir uma publicação");
       }
+    } finally {
+      setIsLiking(false);
     }
   };
 
   const unlikePost = async (likeId) => {
     try {
+      setIsLiking(true);
       const token = localStorage.getItem("@TOKEN");
       await api.delete(`likes/${likeId}`, {
         headers: {
@@ -180,6 +185,8 @@ export const NewsProvider = ({ children }) => {
       } else {
         toast.error("Você precisa estar logado para curtir uma publicação");
       }
+    } finally {
+      setIsLiking(false);
     }
   };
 
@@ -219,7 +226,8 @@ export const NewsProvider = ({ children }) => {
         checkLikePost,
         isLoading,
         getAllPosts,
-        getPostById
+        getPostById,
+        isLiking
       }}
     >
       {children}
