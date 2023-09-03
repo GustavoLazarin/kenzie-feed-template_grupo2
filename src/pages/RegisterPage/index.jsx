@@ -21,7 +21,7 @@ export const RegisterPage = () => {
         </Link>
         <div className="w-full stack-x-large">
           <div className="w-full">
-            <h1 className="heading-2">Cadastre um usuário</h1>
+            <h1 className="text-align-center heading-2">Cadastre um usuário</h1>
             <p className="text-align-center min-w-full">
               Preencha os campos corretamente para fazer login
             </p>
