@@ -18,17 +18,22 @@
   @extend .modal;
   background-color: var(--color-blue-modal);
 
+  z-index: 100;
+
   .dialog__container {
     @include padding-block($p: var(--s1));
     background-color: var(--color-white);
     @extend .grid;
     @extend .stack-medium;
     width: 90dvw;
+    max-height: 90vh;
     max-width: calc(var(--overall-max-width) * 0.8);
     border-radius: var(--large-radius);
     @extend .grid;
 
-    & > * {
+    overflow-x: auto;
+
+    &>* {
       margin-block-end: 0;
       padding-inline: var(--s1);
     }

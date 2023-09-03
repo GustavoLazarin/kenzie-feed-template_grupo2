@@ -8,8 +8,8 @@ export const TextArea = forwardRef(({ label, id, error, ...rest }, ref) => {
           {label}
         </label>
       ) : null}
-      <textarea rows="10" className="w-full" ref={ref} id={id} {...rest} />
-      {error ? <span>{error.message}</span> : null}
+      <textarea rows="10" ref={ref} id={id} {...rest} />
+      {error ? <span className="color-red">{`* ${error.message}`}</span> : null}
     </div>
   );
 });

@@ -30,7 +30,7 @@ export const NewPostForm = () => {
 
   return (
     <form
-      className="grid  padding-block-24 stack-large"
+      className="grid stack-large"
       onSubmit={handleSubmit(submit)}
     >
       <Input placeholder="Título" {...register("title")} error={errors.title} />

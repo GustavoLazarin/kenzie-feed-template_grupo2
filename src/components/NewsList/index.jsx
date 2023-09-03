@@ -1,3 +1,4 @@
+import { Skeleton } from "../Skeleton";
 import { NewsCard } from "./NewsCard";
 
 export const NewsList = ({ newPosts }) => {
@@ -6,6 +7,7 @@ export const NewsList = ({ newPosts }) => {
             {newPosts.map((post) => (
                 <NewsCard key={post.id} post={post} />
             ))}
+            <Skeleton />
         </ul>
     );
 };

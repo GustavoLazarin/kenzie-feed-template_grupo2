@@ -1,17 +1,17 @@
-
-
 /* Resets from Josh Cameau */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
+
 /*
     2. Remove default margin
   */
 * {
   margin: 0;
 }
+
 /*
     3. Allow percentage-based heights in the application
   */
@@ -19,6 +19,7 @@ html,
 body {
   height: 100%;
 }
+
 /*
     Typographic tweaks!
     4. Add accessible line-height
@@ -29,6 +30,7 @@ body {
   -webkit-font-smoothing: antialiased;
   width: 100%;
 }
+
 /*
     6. Improve media defaults
   */
@@ -40,6 +42,7 @@ svg {
   display: block;
   max-width: 100%;
 }
+
 /*
     7. Remove built-in form typography styles
   */
@@ -49,6 +52,7 @@ textarea,
 select {
   font: inherit;
 }
+
 /*
     8. Avoid text overflows
   */
@@ -63,6 +67,7 @@ h6 {
   font-weight: inherit;
   font-size: inherit;
 }
+
 /*
     9. Create a root stacking context
   */
@@ -70,10 +75,12 @@ h6 {
 #__next {
   isolation: isolate;
 }
+
 /* --------------- Resets from Josh Cameau end here */
 figcaption {
   display: none;
 }
+
 button,
 input[type="submit"],
 select {
@@ -83,33 +90,41 @@ select {
   outline: revert;
   color: inherit;
 }
+
 button,
 input[type="submit"],
 a {
   cursor: pointer;
 }
+
 a {
   text-decoration: none;
   color: none;
   font-style: none;
   font-weight: inherit;
 }
+
 h1 {
   font-size: inherit;
   font-weight: inherit;
 }
+
 ul {
   padding-left: 0;
 }
+
 li {
   list-style: none;
 }
+
 strong {
   font-weight: unset;
 }
+
 address {
   font-style: normal;
 }
+
 .sr-only {
   position: absolute;
   left: -10000px;
@@ -118,6 +133,7 @@ address {
   height: 1px;
   overflow: hidden;
 }
+
 .not-sr-only {
   position: static;
   width: auto;
@@ -128,16 +144,20 @@ address {
   clip: auto;
   white-space: normal;
 }
+
 em {
   text-decoration: none;
   font-style: normal;
 }
+
 html {
   scroll-behavior: smooth;
 }
+
 * {
   max-inline-size: var(--measure);
 }
+
 html,
 body,
 div,
@@ -153,28 +173,38 @@ input[type="text"],
 hr {
   max-inline-size: none;
 }
+
 a {
   // pointer-events: none;
   cursor: pointer;
   text-decoration: none;
   color: black;
 }
+
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
 }
-input, textarea, select, button, hr {
+
+input,
+textarea,
+select,
+button,
+hr {
   border: var(--border-thickness) transparent;
 }
+
 textarea {
   resize: none;
 }
+
 optgroup {
   text-decoration: inherit;
   font-style: normal;
