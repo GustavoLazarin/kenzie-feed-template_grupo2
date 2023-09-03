@@ -14,12 +14,8 @@ export const NewsList = ({ newPosts }) => {
                 <>
                     <NewsCardSkeleton />
                     <NewsCardSkeleton />
-                    {loc.pathname === "/" || "/news" ? (
-                        <>
-                            <NewsCardSkeleton />
-                            <NewsCardSkeleton />
-                        </>
-                    ) : null}
+                    <NewsCardSkeleton />
+                    <NewsCardSkeleton />
                 </>
             ) : (
                 newPosts.map((post) => <NewsCard key={post.id} post={post} />)
