@@ -5,28 +5,36 @@ import { RxHeart, RxHeartFilled } from "react-icons/rx";
 import { useNewsContext } from "../../providers/NewsContext";
 
 export const SinglePage = () => {
-  const { id } = useParams();
-  const { singlePost, likePost, likeId, unlikePost, posts, getAllPosts, getPostById } = useNewsContext();
+    const { id } = useParams();
+    const {
+        singlePost,
+        likePost,
+        likeId,
+        unlikePost,
+        posts,
+        getAllPosts,
+        getPostById,
+    } = useNewsContext();
 
-  useEffect(() => {
-    getAllPosts();
-  }, []);
-  
-  let amountPosts = 0;
-  const newPosts = posts.filter((post) => {
-    if (post.id !== singlePost.id && amountPosts < 2) {
-      amountPosts++;
-      return post;
-    }
-  });
+    useEffect(() => {
+        getAllPosts();
+    }, []);
 
-  useEffect(() => {
-    getPostById(id);
-  }, [id]);
+    let amountPosts = 0;
+    const newPosts = posts.filter((post) => {
+        if (post.id !== singlePost.id && amountPosts < 2) {
+            amountPosts++;
+            return post;
+        }
+    });
+
+    useEffect(() => {
+        getPostById(id);
+    }, [id]);
 
     return (
         <>
-            <main className="content align-items-center">
+            <main className="content">
                 <article className="stack-large current-news">
                     <div className="grid">
                         <span className="min-w-full text-align-center">

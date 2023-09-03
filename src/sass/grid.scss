@@ -72,6 +72,22 @@
   }
 }
 
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 2rem;
+
+  img {
+    height: 100%;
+  }
+  
+  @media (min-width: 675px) {
+    flex-direction: row;
+  }
+}
+
 .post-image {
   display: flex;
   max-height: 13.75rem;
