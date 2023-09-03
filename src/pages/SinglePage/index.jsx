@@ -45,7 +45,9 @@ export const SinglePage = () => {
                             <span className="min-w-full text-align-center">
                                 Por: {singlePost.owner}
                             </span>
-                            <h1 className="heading-3">{singlePost.title}</h1>
+                            <h1 className="text-align-center heading-3">
+                                {singlePost.title}
+                            </h1>
                         </div>
                         <img className="w-full" src={singlePost.image} alt="" />
                         <div className="flex like-gap">
