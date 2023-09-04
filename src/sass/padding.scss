@@ -1,0 +1,31 @@
+@mixin padding-inline($p: var(--s0)) {
+  padding-inline: $p;
+}
+
+@mixin padding-block($p: var(--s0)) {
+  padding-block: $p;
+}
+
+@mixin padding($p: var(--s0)) {
+  padding: $p;
+}
+
+.padding-i-0 {
+  padding-inline: 0;
+}
+
+.padding-i-24 {
+  padding-inline: clamp(0.5rem, 4%, 2rem);
+}
+
+.padding-i-s-24 {
+  padding-inline-start: 1.5rem;
+}
+
+.padding-b-24 {
+  padding-block: 2.5rem;
+}
+
+.padding-b-0 {
+  padding-block: 0;
+}

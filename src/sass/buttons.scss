@@ -1,0 +1,85 @@
+@import "./padding.scss";
+@import "./sizing.scss";
+@import "./flex.scss";
+
+@mixin transition($i: var(--color-blue), $f: var(--color-blue-hover)) {
+  transition: background-color 300ms;
+  background-color: $i;
+
+  &:hover {
+    background-color: $f;
+  }
+}
+
+a {
+  @extend .text-align-center;
+  max-width: var(--input-max-width);
+}
+
+.btn {
+  font-weight: var(--bold);
+  border-radius: var(--small-radius);
+  color: var(--color-black);
+}
+
+.btn__small {
+  @include padding-inline($p: 1rem);
+  @include padding-block($p: 0.8rem);
+  font-size: var(--small-paragraph);
+}
+
+.btn__medium {
+  @include padding-inline($p: 1.55rem);
+  @include padding-block($p: 1.25rem);
+  font-size: var(--small-paragraph);
+}
+
+.btn__large {
+  @include padding-inline($p: 2.75rem);
+  @include padding-block($p: 1.375rem);
+  font-size: var(--paragraph);
+}
+
+.btn__primary {
+  @include transition;
+  color: var(--color-white);
+}
+
+.btn__secondary {
+  @include transition($i: var(--color-white), $f: var(--color-light-blue));
+  border: var(--border-thickness) var(--color-blue);
+  @extend .btn__max-width;
+  color: var(--color-blue);
+}
+
+.btn__max-width {
+  max-width: 7.5rem;
+}
+
+.btn__tertiary {
+  background-color: var(--color-white);
+  font-weight: var(--regular);
+  text-decoration: underline;
+  color: var(--color-blue);
+
+  &:hover {
+    color: var(--color-blue-hover);
+  }
+}
+
+.btn__exit {
+  color: var(--color-black);
+  @include transition($i: var(--color-white), $f: var(--color-grey));
+}
+
+.btn__register {
+  @media (min-width: 800px) {
+    max-width: var(--btn-max-width);
+    min-width: 0;
+    justify-self: end;
+  }
+}
+
+.btn__dashboard{
+  min-width: 2.1875rem;
+}

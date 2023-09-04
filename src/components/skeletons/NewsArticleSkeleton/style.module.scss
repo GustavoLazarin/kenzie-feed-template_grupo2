@@ -1,0 +1,89 @@
+@mixin background {
+    background: var(--color-grey-bg);
+}
+
+@mixin radius($rad: 4px) {
+    border-radius: $rad;
+}
+
+.news {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    overflow: hidden;
+
+    .author,
+    .title,
+    .like,
+    .paragraph {
+        position: relative;
+
+        @include radius;
+        @include background;
+    }
+
+    .author {
+        width: 20%;
+        height: 24px;
+    }
+
+    .title {
+        width: 60%;
+        height: 66px;
+    }
+
+    .image {
+        position: relative;
+
+        width: 100%;
+        height: 455px;
+
+        @include background;
+        @include radius(25px);
+
+        overflow: hidden;
+    }
+
+    .like {
+        align-self: flex-start;
+
+        width: 15%;
+        height: 22px;
+    }
+
+    .paragraph {
+        width: 100%;
+        height: 24px;
+    }
+
+    div {
+        overflow: hidden;
+
+        &::after {
+            position: absolute;
+
+            content: "";
+
+            width: 100%;
+            height: 100%;
+
+            background: linear-gradient(90deg, transparent, var(--color-white), transparent);
+            animation: pulse 1.5s ease-in-out infinite;
+
+            overflow: hidden;
+
+            @keyframes pulse {
+                0% {
+                    transform: translateX(-100%);
+                }
+
+                100% {
+                    transform: translateX(200%);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,92 @@
+@import "./grid.scss";
+@import "./flex.scss";
+@import "./position.scss";
+@import "./padding.scss";
+@import "./margin.scss";
+
+.header {
+  @extend .flex;
+  @extend .space-between;
+  position: relative;
+
+  .container {
+    @extend .flex;
+    @extend .space-between;
+    @include margin-block(var(--s2));
+    width: 100%;
+
+    button,
+    a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 43px;
+    }
+
+    .btn__user {
+      display: inline;
+      width: 43px;
+      border-radius: 50%;
+    }
+
+    img {
+      cursor: pointer;
+    }
+
+    .header__user {
+      @extend .flex;
+      @include gap(1rem);
+      position: relative;
+
+      .options {
+        @include gap(0.5rem);
+        position: absolute;
+        right: 0;
+        top: 120%;
+        z-index: 2;
+        min-width: 120px;
+        background: var(--color-white);
+        box-shadow: var(--box-shadow-1);
+        border-radius: 4px;
+        padding: 0.5rem;
+        display: none;
+        flex-direction: column;
+
+        button {
+          width: 100%;
+
+          &::before {
+            content: "Sair";
+          }
+
+          @media (min-width: 580px) {
+            &::before {
+              content: "";
+            }
+          }
+        }
+
+        @media (min-width: 580px) {
+          @include gap(1rem);
+          position: inherit;
+          inset: 0;
+          display: inline-flex;
+          flex-direction: row;
+          min-width: fit-content;
+          padding: 0;
+          border-radius: 0;
+          background: transparent;
+          box-shadow: none;
+
+          button {
+            width: inherit;
+          }
+        }
+      }
+
+      .show {
+        display: flex;
+      }
+    }
+  }
+}

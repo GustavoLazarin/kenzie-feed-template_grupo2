@@ -1,0 +1,69 @@
+.flex {
+  display: flex;
+}
+
+.column {
+  flex-flow: column;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.place-content-center {
+  place-content: center;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.align-itens-end {
+  align-items: flex-end;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.align-self-end {
+  align-self: flex-end;
+}
+
+.align-self-center {
+  align-self: center;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+@mixin gap($g: var(--s0)) {
+  gap: $g;
+}
+
+.form-gap {
+  gap: var(--s-1);
+}
+
+.news-gap {
+  gap: var(--s3);
+}
+
+.form__register-gap {
+  @media (max-width: 949px) {
+    gap: var(--s1);
+  }
+}
+
+.like-gap {
+  gap: 0.5rem;
+}

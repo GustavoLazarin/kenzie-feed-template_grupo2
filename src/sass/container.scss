@@ -1,0 +1,27 @@
+@import "./padding.scss";
+@import "./sizing.scss";
+@import "./flex.scss";
+@import "./stack.scss";
+
+.cards {
+  display: inline-flex;
+}
+
+.container__home {
+  max-width: 75rem;
+  @extend .grid;
+  @extend .justify-items-center;
+  @extend .w-full;
+}
+
+.container__edit {
+  max-width: 56rem;
+}
+
+.card {
+  display: inline-flex;
+}
+
+img {
+  border-radius: 1.5rem;
+}

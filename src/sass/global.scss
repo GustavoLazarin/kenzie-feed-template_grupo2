@@ -1,0 +1,31 @@
+@import "./grid.scss";
+@import "./sizing.scss";
+@import "./flex.scss";
+@import "./position.scss";
+@import "./padding.scss";
+@import "./container.scss";
+@import "./stack.scss";
+@import "./margin.scss";
+
+.everything {
+  @extend .justify-items-center;
+  @extend .grid-page;
+  height: 100dvh;
+}
+
+.content,
+header,
+footer {
+  @include padding-inline($p: 1rem);
+  max-width: 1050px;
+  @extend .w-full;
+}
+
+.content {
+  @extend .stack-large;
+}
+
+.page-heading {
+  @extend .text-align-center;
+  font-weight: var(--bold);
+}

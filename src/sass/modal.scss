@@ -1,0 +1,50 @@
+@import "./grid.scss";
+@import "./flex.scss";
+@import "./position.scss";
+@import "./padding.scss";
+@import "./container.scss";
+@import "./stack.scss";
+
+.modal {
+  inset: 0;
+  @extend .fixed;
+  @extend .grid;
+  @extend .justify-items-center;
+  @extend .align-items-center;
+  margin: 0;
+}
+
+.dialog__overlay {
+  @extend .modal;
+  background-color: var(--color-blue-modal);
+
+  z-index: 100;
+
+  .dialog__container {
+    @include padding-block($p: var(--s1));
+    background-color: var(--color-white);
+    @extend .grid;
+    @extend .stack-medium;
+    width: 90dvw;
+    max-height: 90vh;
+    max-width: calc(var(--overall-max-width) * 0.8);
+    border-radius: var(--large-radius);
+    @extend .grid;
+
+    overflow-x: auto;
+
+    &>* {
+      margin-block-end: 0;
+      padding-inline: var(--s1);
+    }
+
+    .container__top {
+      border-start-end-radius: 0.25rem;
+      border-start-start-radius: 0.25rem;
+      @include padding-inline($p: var(--s1));
+      @extend .flex;
+      @extend .space-between;
+      @include padding-block($p: var(--s1));
+    }
+  }
+}

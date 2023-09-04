@@ -1,0 +1,65 @@
+@import "./flex.scss";
+
+body {
+  font-family: var(--font-serif);
+}
+
+button,
+span,
+a,
+p,
+.author,
+input,
+textarea,
+footer,
+.paragraph {
+  font-family: var(--font-sans-serif);
+}
+
+.color-red {
+  color: var(--color-danger);
+}
+
+.heading-2,
+.heading-3 {
+  line-height: 150%;
+  font-weight: var(--bold);
+}
+
+.heading-2 {
+  font-size: clamp(var(--title-3), 3.4vw, var(--title-2));
+}
+
+.heading-3 {
+  font-size: clamp(var(--paragraph), 3.4vw, var(--title-2));
+}
+
+h1 {
+  line-height: 150%;
+}
+
+.bold {
+  font-weight: var(--bold);
+}
+
+.author {
+  font-size: var(--small-paragraph);
+  color: var(--color-black);
+}
+
+.post-title {
+  line-height: 120%;
+  font-weight: var(--bold);
+  font-size: clamp(var(--title-post-mobile), 2vw, var(--title-post));
+}
+
+.paragraph-large {
+  font-size: clamp(var(--paragraph), 2vw, var(--paragraph-large));
+  line-height: 150%;
+  line-break: auto;
+}
+
+.news-title {
+  font-size: var(--news-title);
+  line-height: 150%;
+}
